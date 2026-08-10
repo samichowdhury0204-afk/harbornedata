@@ -62,26 +62,37 @@
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
+  --radius: 0.25rem;
+  /* warm ivory */
+  --background: oklch(0.962 0.009 85);
+  --foreground: oklch(0.235 0.024 220);
+  --card: oklch(0.982 0.006 85);
+  --card-foreground: oklch(0.235 0.024 220);
+  --popover: oklch(0.982 0.006 85);
+  --popover-foreground: oklch(0.235 0.024 220);
+  --primary: oklch(0.235 0.024 220);
+  --primary-foreground: oklch(0.962 0.009 85);
+  --secondary: oklch(0.936 0.011 85);
+  --secondary-foreground: oklch(0.235 0.024 220);
+  --muted: oklch(0.936 0.011 85);
+  --muted-foreground: oklch(0.53 0.018 230);
+  --accent: oklch(0.66 0.09 52);
+  --accent-foreground: oklch(0.98 0.006 85);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
+  --border: oklch(0.876 0.013 80);
+  --input: oklch(0.876 0.013 80);
+  --ring: oklch(0.66 0.09 52);
+  /* brand */
+  --copper: oklch(0.66 0.09 52);
+  --copper-light: oklch(0.78 0.075 58);
+  --copper-deep: oklch(0.52 0.08 46);
+  --ink: oklch(0.235 0.024 220);
+  --ink-deep: oklch(0.19 0.022 220);
+  --grid-line: oklch(0.235 0.024 220 / 6%);
+  --font-sans:
+    "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, "SFMono-Regular", monospace;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -95,6 +106,16 @@
   --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
   --sidebar-border: oklch(0.929 0.013 255.508);
   --sidebar-ring: oklch(0.704 0.04 256.788);
+}
+
+@theme inline {
+  --color-copper: var(--copper);
+  --color-copper-light: var(--copper-light);
+  --color-copper-deep: var(--copper-deep);
+  --color-ink: var(--ink);
+  --color-ink-deep: var(--ink-deep);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
 }
 
 .dark {
@@ -140,5 +161,44 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    font-synthesis-weight: none;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--copper) 28%, transparent);
+  }
+}
+
+@utility label-xs {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+
+@utility tech-grid {
+  background-image:
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+@utility rule-copper {
+  background: linear-gradient(
+    to right,
+    var(--copper),
+    color-mix(in oklab, var(--copper) 15%, transparent)
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
   }
 }
