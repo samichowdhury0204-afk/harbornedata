@@ -1,8 +1,41 @@
+import { useEffect, type MouseEvent } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import { Reveal } from "./primitives";
 
+declare global {
+  interface Window {
+    Calendly?: {
+      initPopupWidget: (options: { url: string }) => void;
+    };
+  }
+}
+
 export function FinalCta() {
   const reduce = useReducedMotion();
+
+  useEffect(() => {
+    if (!document.getElementById("calendly-widget-css")) {
+      const link = document.createElement("link");
+      link.id = "calendly-widget-css";
+      link.rel = "stylesheet";
+      link.href = "https://assets.calendly.com/assets/external/widget.css";
+      document.head.appendChild(link);
+    }
+
+    if (!document.getElementById("calendly-widget-js")) {
+      const script = document.createElement("script");
+      script.id = "calendly-widget-js";
+      script.src = "https://assets.calendly.com/assets/external/widget.js";
+      script.async = true;
+      document.body.appendChild(script);
+    }
+  }, []);
+
+  const openCalendly = (event: MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
+    window.Calendly?.initPopupWidget({ url: "https://calendly.com/samichowdhury1708/30min" });
+  };
+
   return (
     <section
       id="contact"
@@ -39,15 +72,24 @@ export function FinalCta() {
           </p>
         </Reveal>
         <Reveal delay={0.14}>
-          <div className="mt-10 flex justify-center">
+          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a
-              href="mailto:hello@harbornedata.com"
-              className="group inline-flex items-center gap-2.5 rounded-xs bg-copper px-6 py-3.5 text-sm font-medium text-accent-foreground transition-colors duration-300 hover:bg-copper-light focus-visible:ring-2 focus-visible:ring-copper-light focus-visible:ring-offset-2 focus-visible:ring-offset-ink focus-visible:outline-none"
+              href="https://calendly.com/samichowdhury1708/30min"
+              target="_blank"
+              rel="noreferrer noopener"
+              onClick={openCalendly}
+              className="group inline-flex items-center justify-center gap-2.5 rounded-xs bg-copper px-6 py-3.5 text-sm font-medium text-accent-foreground transition-colors duration-300 hover:bg-copper-light focus-visible:ring-2 focus-visible:ring-copper-light focus-visible:ring-offset-2 focus-visible:ring-offset-ink focus-visible:outline-none"
             >
-              Start a conversation
+              Schedule time with me
               <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-1">
                 →
               </span>
+            </a>
+            <a
+              href="mailto:sami@harborne-data.com"
+              className="inline-flex items-center justify-center rounded-xs border border-border bg-background px-6 py-3.5 text-sm font-medium text-foreground transition-colors duration-300 hover:border-copper hover:text-copper-deep"
+            >
+              Email sami@harborne-data.com
             </a>
           </div>
         </Reveal>

@@ -4,10 +4,9 @@ import { Logo, CtaLink } from "./primitives";
 import { cn } from "@/lib/utils";
 
 const links = [
-  { href: "#how-it-works", label: "How it works" },
   { href: "#solutions", label: "Solutions" },
   { href: "#results", label: "Results" },
-  { href: "#about", label: "About" },
+  { href: "#contact", label: "Contact" },
 ];
 
 export function Nav() {

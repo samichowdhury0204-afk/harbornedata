@@ -20,7 +20,7 @@ export function Offer() {
         <div className="lg:col-span-5">
           <Reveal>
             <h2 className="text-3xl leading-[1.1] font-semibold tracking-[-0.025em] md:text-[2.75rem]">
-              Your outsourced sales team.
+              Your outsourced team.
             </h2>
           </Reveal>
           <Reveal delay={0.08}>

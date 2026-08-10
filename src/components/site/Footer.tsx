@@ -1,10 +1,8 @@
 import { Logo } from "./primitives";
 
 const links = [
-  { href: "#how-it-works", label: "How it works" },
   { href: "#solutions", label: "Solutions" },
   { href: "#results", label: "Results" },
-  { href: "#about", label: "About" },
   { href: "#contact", label: "Contact" },
 ];
 

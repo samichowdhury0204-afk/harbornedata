@@ -35,17 +35,7 @@ export function Hero() {
         </motion.p>
 
         <h1 className="mt-7 max-w-4xl text-[2.5rem] leading-[1.05] font-semibold tracking-[-0.03em] text-balance md:text-6xl lg:text-[4.25rem]">
-          {["Your next manufacturing", "customers are already out there."].map((line, i) => (
-            <motion.span
-              key={line}
-              className="block"
-              initial={reduce ? { opacity: 0 } : { opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.85, delay: 0.1 + i * 0.12, ease: [0.22, 0.61, 0.36, 1] }}
-            >
-              {line}
-            </motion.span>
-          ))}
+          Predictable Growth for British and American Manufacturers
         </h1>
 
         <motion.p
@@ -55,7 +45,7 @@ export function Hero() {
           className="mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl"
         >
           Harborne Data finds the right companies, starts the conversation and hands qualified
-          opportunities directly to your sales team.
+          opportunities directly to your team.
         </motion.p>
 
         <motion.div
@@ -66,7 +56,7 @@ export function Hero() {
         >
           <CtaLink />
           <a
-            href="#how-it-works"
+            href="#solutions"
             className="group inline-flex items-center gap-2.5 rounded-xs border border-border px-5 py-3 text-sm font-medium transition-colors duration-300 hover:border-copper hover:text-copper-deep"
           >
             See how it works

@@ -1,31 +1,53 @@
 import { motion } from "motion/react";
 import { Reveal, Section, SectionLabel, staggerChild, staggerParent } from "./primitives";
 
-const rows = [
-  { k: "Industry", v: "Automotive manufacturing" },
-  { k: "Requirement", v: "Aluminium tooling for a new production programme" },
-  { k: "Contact", v: "Engineering Manager" },
+const steps = [
+  {
+    n: "01",
+    title: "Understand",
+    body: "We learn what you manufacture, where you're strongest and what counts as a good customer.",
+  },
+  {
+    n: "02",
+    title: "Find",
+    body: "We identify companies and decision-makers that match your capabilities and commercial goals.",
+  },
+  {
+    n: "03",
+    title: "Engage",
+    body: "We run targeted outbound campaigns and manage the conversations that follow.",
+  },
+  {
+    n: "04",
+    title: "Qualify",
+    body: "We surface only genuine opportunities that are ready for technical or commercial follow-up.",
+  },
+  {
+    n: "05",
+    title: "Handoff",
+    body: "Your team steps in when the opportunity is real, qualified and worth their time.",
+  },
 ];
 
-const chain = ["Reply", "Qualified", "Handoff", "Your sales team"];
+const chain = ["Reply", "Qualified", "Handoff", "Your team"];
 
-export function Handoff() {
+export function Solutions() {
   return (
-    <Section className="relative overflow-hidden">
+    <Section id="solutions">
       <div className="grid gap-14 lg:grid-cols-12 lg:gap-16">
-        <div className="lg:col-span-5">
+        <div className="lg:col-span-6">
           <Reveal>
-            <SectionLabel>The handoff</SectionLabel>
+            <SectionLabel>Solutions</SectionLabel>
           </Reveal>
           <Reveal delay={0.05}>
             <h2 className="mt-8 text-3xl leading-[1.1] font-semibold tracking-[-0.025em] text-balance md:text-[2.5rem]">
-              We don't hand you leads. We hand you opportunities.
+              The full process from first contact to qualified opportunity.
             </h2>
           </Reveal>
           <Reveal delay={0.12}>
             <p className="mt-7 max-w-lg text-base leading-relaxed text-muted-foreground md:text-lg">
-              When a prospect has a genuine requirement, wants to discuss a project, is ready to
-              provide drawings or wants to arrange a call, that's when we bring your team in.
+              We merge targeted outreach, buyer engagement and opportunity qualification so your
+              team only acts on work that is already moving toward a decision.
             </p>
           </Reveal>
 
@@ -34,92 +56,81 @@ export function Handoff() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
-            className="mt-12 space-y-3"
+            className="mt-12 space-y-6"
           >
-            {chain.map((c, i) => (
-              <motion.li key={c} variants={staggerChild} className="flex items-center gap-4">
-                <span
-                  aria-hidden
-                  className="h-px w-6"
-                  style={{
-                    background: i === chain.length - 1 ? "var(--ink)" : "var(--copper)",
-                  }}
-                />
-                <span className="font-mono text-[0.6875rem] tracking-[0.16em] uppercase">{c}</span>
+            {steps.map((step) => (
+              <motion.li key={step.n} variants={staggerChild} className="rounded-sm border border-border bg-card p-6">
+                <div className="flex items-center gap-3">
+                  <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-copper text-sm font-semibold text-foreground">
+                    {step.n}
+                  </span>
+                  <h3 className="text-lg font-semibold tracking-tight">{step.title}</h3>
+                </div>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{step.body}</p>
               </motion.li>
             ))}
           </motion.ol>
         </div>
 
-        <div className="lg:col-span-6 lg:col-start-7">
+        <div className="lg:col-span-6">
+          <Reveal>
+            <SectionLabel>Opportunity flow</SectionLabel>
+          </Reveal>
           <motion.article
-            initial={{ opacity: 0, y: 28 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.9, ease: [0.22, 0.61, 0.36, 1] }}
-            className="border border-ink/15 bg-card shadow-[0_24px_60px_-40px_rgba(16,32,37,0.5)]"
+            variants={staggerParent}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="mt-8 space-y-6 rounded-xl border border-border bg-card p-8 shadow-[0_24px_60px_-40px_rgba(16,32,37,0.5)]"
           >
-            <header className="flex items-center justify-between border-b border-border px-6 py-4">
-              <span className="font-mono text-[0.6875rem] tracking-[0.18em] text-copper-deep uppercase">
-                New opportunity
-              </span>
-              <span className="flex items-center gap-2 font-mono text-[0.625rem] tracking-[0.16em] text-muted-foreground uppercase">
-                <motion.span
-                  aria-hidden
-                  className="h-1.5 w-1.5 rounded-full bg-copper"
-                  animate={{ opacity: [1, 0.25, 1] }}
-                  transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
-                />
-                Live
-              </span>
-            </header>
-
-            <div className="px-6 py-7">
-              <h3 className="text-2xl font-semibold tracking-[-0.02em]">Example Engineering Ltd</h3>
-              <dl className="mt-7 divide-y divide-border border-y border-border">
-                {rows.map((r) => (
-                  <div key={r.k} className="grid grid-cols-3 gap-4 py-3.5">
-                    <dt className="font-mono text-[0.625rem] tracking-[0.16em] text-muted-foreground uppercase">
-                      {r.k}
-                    </dt>
-                    <dd className="col-span-2 text-sm">{r.v}</dd>
-                  </div>
-                ))}
-              </dl>
-
-              <div className="mt-7 flex items-center gap-4">
-                <span className="font-mono text-[0.625rem] tracking-[0.16em] text-muted-foreground uppercase">
-                  Status
-                </span>
-                <span className="border border-copper/50 bg-[color-mix(in_oklab,var(--copper)_10%,transparent)] px-2.5 py-1 font-mono text-[0.625rem] tracking-[0.16em] text-copper-deep uppercase">
-                  Qualified
-                </span>
+            <motion.div variants={staggerChild} className="flex items-center justify-between gap-4 border-b border-border pb-4">
+              <div>
+                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">New opportunity</p>
+                <h3 className="mt-3 text-2xl font-semibold tracking-[-0.02em]">Example Engineering Ltd</h3>
               </div>
+              <span className="inline-flex items-center gap-2 rounded-full border border-copper/40 bg-[color-mix(in_oklab,var(--copper)_12%,transparent)] px-3 py-1 text-[0.625rem] uppercase tracking-[0.16em] text-copper-deep">
+                <span className="h-2 w-2 rounded-full bg-copper" />
+                Qualified
+              </span>
+            </motion.div>
 
-              <div className="mt-6">
-                <span className="font-mono text-[0.625rem] tracking-[0.16em] text-muted-foreground uppercase">
-                  Next step
-                </span>
-                <p className="mt-2 text-sm leading-relaxed">
-                  Customer is ready to discuss requirements and provide drawings for quotation.
-                </p>
-              </div>
-            </div>
+            <motion.div variants={staggerChild} className="grid gap-4 border-b border-border pb-5 text-sm leading-relaxed text-muted-foreground">
+              {[
+                { label: "Industry", value: "Automotive manufacturing" },
+                { label: "Requirement", value: "Aluminium tooling for a new production programme" },
+                { label: "Contact", value: "Engineering Manager" },
+              ].map((item) => (
+                <div key={item.label} className="grid grid-cols-[120px_1fr] gap-3">
+                  <span className="font-mono text-[0.625rem] uppercase tracking-[0.16em] text-muted-foreground">
+                    {item.label}
+                  </span>
+                  <span>{item.value}</span>
+                </div>
+              ))}
+            </motion.div>
 
-            <footer className="border-t border-border">
-              <a
-                href="#contact"
-                className="group flex items-center justify-between px-6 py-4 text-sm font-medium transition-colors duration-300 hover:bg-[color-mix(in_oklab,var(--copper)_8%,transparent)]"
-              >
-                Hand off to your team
-                <span
-                  aria-hidden
-                  className="text-copper transition-transform duration-300 group-hover:translate-x-1"
-                >
-                  →
-                </span>
-              </a>
-            </footer>
+            <motion.ol variants={staggerChild} className="space-y-3">
+              {chain.map((item, index) => (
+                <li key={item} className="flex items-center gap-3 text-sm uppercase tracking-[0.16em] text-muted-foreground">
+                  <span className="h-px w-7 bg-border" />
+                  <span className={index === chain.length - 1 ? "text-foreground font-semibold" : ""}>{item}</span>
+                </li>
+              ))}
+            </motion.ol>
+
+            <motion.p variants={staggerChild} className="text-sm leading-relaxed">
+              When a reply becomes a real buying opportunity, we hand it across with technical clarity,
+              commercial context and a clear next step for your team.
+            </motion.p>
+
+            <motion.a
+              variants={staggerChild}
+              href="#contact"
+              className="group inline-flex items-center justify-center rounded-xs border border-copper px-6 py-3 text-sm font-medium text-copper-deep transition-colors duration-300 hover:bg-copper/10"
+            >
+              See contact options
+              <span aria-hidden className="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
+            </motion.a>
           </motion.article>
         </div>
       </div>

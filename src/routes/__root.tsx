@@ -81,7 +81,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "We find the right companies, start the conversation and hand qualified opportunities directly to your sales team.",
+          "We find the right companies, start the conversation and hand qualified opportunities directly to your team.",
       },
       { name: "author", content: "Harborne Data" },
       { property: "og:title", content: "Harborne Data — Outsourced Sales for Manufacturers" },
