@@ -1,9 +1,9 @@
 import { motion, useReducedMotion, type Variants } from "motion/react";
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
-import logoDark from "@/assets/harborne-logo.png.asset.json";
-import logoLight from "@/assets/harborne-logo-light.png.asset.json";
-import mark from "@/assets/harborne-mark.png.asset.json";
+import logoDark from "@/assets/harborne-logo.png";
+import logoLight from "@/assets/harborne-logo-light.png";
+import mark from "@/assets/harborne-mark.png";
 
 export function Logo({
   variant = "dark",
@@ -14,7 +14,7 @@ export function Logo({
 }) {
   return (
     <img
-      src={variant === "dark" ? logoDark.url : logoLight.url}
+      src={variant === "dark" ? logoDark : logoLight}
       alt="Harborne Data"
       width={330}
       height={88}
@@ -24,7 +24,7 @@ export function Logo({
 }
 
 export function Mark({ className }: { className?: string }) {
-  return <img src={mark.url} alt="" aria-hidden className={cn("w-auto", className)} />;
+  return <img src={mark} alt="" aria-hidden className={cn("w-auto", className)} />;
 }
 
 export function Reveal({

@@ -1,8 +1,8 @@
 import { motion } from "motion/react";
 import { Reveal, Section, SectionLabel, staggerChild, staggerParent } from "./primitives";
-import drawingTube from "@/assets/drawing-tube.jpg.asset.json";
-import drawingFlange from "@/assets/drawing-flange.jpg.asset.json";
-import labels from "@/assets/labels.png.asset.json";
+import drawingTube from "@/assets/drawing-tube.jpg";
+import drawingFlange from "@/assets/drawing-flange.jpg";
+import labels from "@/assets/labels.png";
 
 const examples = [
   {
@@ -12,7 +12,7 @@ const examples = [
       "A tooling manufacturer wanted more opportunities from UK manufacturers but had limited internal sales capacity.",
     solution:
       "Four CAD drawings came back from new clients within days of launch. Onboarding with a large shipbuilder for repeat batch componentry followed within a month.",
-    image: drawingTube.url,
+    image: drawingTube,
     alt: "Engineering drawing of an extruded tube component quoted by a tooling manufacturer",
     caption: "Drawing received for quotation",
   },
@@ -23,7 +23,7 @@ const examples = [
       "An established global manufacturer wanted relationships with prospects in the UK and US.",
     solution:
       "A repeatable outbound channel into UK customers. Six orders in the first week, including a superyacht uniform supplier and well-known fashion names.",
-    image: labels.url,
+    image: labels,
     alt: "Sample board of woven and printed garment labels produced by the manufacturer",
     caption: "Product samples sent to prospects",
   },
@@ -34,7 +34,7 @@ const examples = [
       "An established firm needed contact data and lead generation in a niche where marketing data is notoriously hard to find.",
     solution:
       "We built a database of 3,600+ prospects, which went on to generate tens of thousands of pounds of business value.",
-    image: drawingFlange.url,
+    image: drawingFlange,
     alt: "Sectional engineering drawing of a flange used in the client's niche",
     caption: "Niche componentry market",
   },
