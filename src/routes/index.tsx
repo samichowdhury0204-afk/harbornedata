@@ -2,9 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Nav } from "@/components/site/Nav";
 import { Hero } from "@/components/site/Hero";
 import { Solutions } from "@/components/site/Handoff";
-import { Services } from "@/components/site/Services";
+// Services section removed from homepage composition per design
 import { Examples } from "@/components/site/Examples";
-import { Roles } from "@/components/site/Roles";
+// Roles section removed from homepage flow per request
 import { FinalCta } from "@/components/site/FinalCta";
 import { Footer } from "@/components/site/Footer";
 
@@ -38,9 +38,7 @@ function Index() {
       <main>
         <Hero />
         <Solutions />
-        <Services />
         <Examples />
-        <Roles />
         <FinalCta />
       </main>
       <Footer />

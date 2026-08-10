@@ -1,20 +1,61 @@
 import { motion } from "motion/react";
+import { useEffect, useState } from "react";
 import { Reveal, Section, SectionLabel, staggerChild, staggerParent } from "./primitives";
+
+import companiesHouse from "@/assets/icons-flowchart/companies-house-icon.png";
+import aiArk from "@/assets/icons-flowchart/ai-ark.jpg";
+import linkedin from "@/assets/icons-flowchart/linkedin-icon.png";
+import excel from "@/assets/icons-flowchart/excel-icon.jpg";
+
+import instantly from "@/assets/icons-flowchart/instantly-icon.png";
+import emailIcon from "@/assets/icons-flowchart/email-icon.jpg";
+
+import gptIcon from "@/assets/icons-flowchart/gpt-icon.png";
+import claudeIcon from "@/assets/icons-flowchart/claude-icon.png";
 
 const functions = [
   {
     title: "Target",
+    icons: [companiesHouse, aiArk, linkedin, excel],
     body: "We learn your market, define the right customers and focus on the companies most likely to buy.",
   },
   {
     title: "Engage",
+    icons: [instantly, emailIcon],
     body: "We start the conversation with the right people and keep momentum going across the funnel.",
   },
   {
     title: "Qualify",
+    icons: [gptIcon, claudeIcon],
     body: "We identify genuine opportunities and hand them over when the timing and fit are right.",
   },
 ];
+
+function IconCarousel({ icons, interval = 2000 }: { icons: string[]; interval?: number }) {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    if (!icons || icons.length <= 1) return;
+    const t = setInterval(() => setIndex((i) => (i + 1) % icons.length), interval);
+    return () => clearInterval(t);
+  }, [icons, interval]);
+
+  return (
+    <div className="relative h-14 w-14 md:h-16 md:w-16">
+      {icons.map((src, i) => (
+        <motion.img
+          key={i}
+          src={src}
+          alt=""
+          initial={{ opacity: 0, scale: 0.94 }}
+          animate={i === index ? { opacity: 1, scale: 1.08 } : { opacity: 0, scale: 0.94 }}
+          transition={{ duration: 0.38 }}
+          className="absolute inset-0 h-full w-full rounded-full object-contain bg-transparent p-0"
+        />
+      ))}
+    </div>
+  );
+}
 
 const chain = ["Reply", "Qualified", "Handoff", "Your team"];
 
@@ -54,13 +95,22 @@ export function Solutions() {
               </div>
             </div>
 
-            <div className="mt-6 grid gap-4 md:grid-cols-3">
-              {functions.map((item) => (
-                <motion.div key={item.title} variants={staggerChild} className="rounded-lg border border-border/70 bg-background/70 p-4">
-                  <h4 className="text-sm font-semibold tracking-tight text-foreground">{item.title}</h4>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
-                </motion.div>
-              ))}
+            <div className="mt-6 relative">
+              <div className="absolute left-6 top-16 bottom-6 w-px bg-border/60" aria-hidden />
+              <ol className="space-y-8 pl-12">
+                {functions.map((item, idx) => (
+                  <motion.li key={item.title} variants={staggerChild} className="relative flex items-start gap-4">
+                    <div className="-left-8 top-0 flex h-12 w-12 items-center justify-center rounded-full border border-border bg-background p-2">
+                      <IconCarousel icons={item.icons} />
+                    </div>
+
+                    <div>
+                      <h4 className="text-sm font-semibold tracking-tight text-foreground">{item.title}</h4>
+                      <p className="mt-2 text-sm leading-relaxed text-muted-foreground max-w-md">{item.body}</p>
+                    </div>
+                  </motion.li>
+                ))}
+              </ol>
             </div>
           </motion.div>
         </div>
