@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from "motion/react";
-import { CtaLink, Reveal } from "./primitives";
+import { Reveal } from "./primitives";
 
 export function FinalCta() {
   const reduce = useReducedMotion();
@@ -57,9 +57,6 @@ export function FinalCta() {
           </p>
         </Reveal>
       </div>
-      <span className="sr-only">
-        <CtaLink />
-      </span>
     </section>
   );
 }
