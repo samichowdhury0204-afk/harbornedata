@@ -1,31 +1,18 @@
 import { motion } from "motion/react";
 import { Reveal, Section, SectionLabel, staggerChild, staggerParent } from "./primitives";
 
-const steps = [
+const functions = [
   {
-    n: "01",
-    title: "Understand",
-    body: "We learn what you manufacture, where you're strongest and what counts as a good customer.",
+    title: "Target",
+    body: "We learn your market, define the right customers and focus on the companies most likely to buy.",
   },
   {
-    n: "02",
-    title: "Find",
-    body: "We identify companies and decision-makers that match your capabilities and commercial goals.",
-  },
-  {
-    n: "03",
     title: "Engage",
-    body: "We run targeted outbound campaigns and manage the conversations that follow.",
+    body: "We start the conversation with the right people and keep momentum going across the funnel.",
   },
   {
-    n: "04",
     title: "Qualify",
-    body: "We surface only genuine opportunities that are ready for technical or commercial follow-up.",
-  },
-  {
-    n: "05",
-    title: "Handoff",
-    body: "Your team steps in when the opportunity is real, qualified and worth their time.",
+    body: "We identify genuine opportunities and hand them over when the timing and fit are right.",
   },
 ];
 
@@ -51,25 +38,31 @@ export function Solutions() {
             </p>
           </Reveal>
 
-          <motion.ol
+          <motion.div
             variants={staggerParent}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
-            className="mt-12 space-y-6"
+            className="mt-12 rounded-xl border border-border bg-card p-6 md:p-8"
           >
-            {steps.map((step) => (
-              <motion.li key={step.n} variants={staggerChild} className="rounded-sm border border-border bg-card p-6">
-                <div className="flex items-center gap-3">
-                  <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-copper text-sm font-semibold text-foreground">
-                    {step.n}
-                  </span>
-                  <h3 className="text-lg font-semibold tracking-tight">{step.title}</h3>
-                </div>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{step.body}</p>
-              </motion.li>
-            ))}
-          </motion.ol>
+            <div className="flex items-center justify-between gap-4 border-b border-border pb-4">
+              <div>
+                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Outsourced sales function</p>
+                <h3 className="mt-3 text-xl font-semibold tracking-[-0.02em] text-foreground">
+                  Built to feel like part of your team.
+                </h3>
+              </div>
+            </div>
+
+            <div className="mt-6 grid gap-4 md:grid-cols-3">
+              {functions.map((item) => (
+                <motion.div key={item.title} variants={staggerChild} className="rounded-lg border border-border/70 bg-background/70 p-4">
+                  <h4 className="text-sm font-semibold tracking-tight text-foreground">{item.title}</h4>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
         </div>
 
         <div className="lg:col-span-6">
