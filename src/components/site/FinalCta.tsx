@@ -16,7 +16,7 @@ export function FinalCta() {
             "linear-gradient(to right, rgba(245,242,236,0.07) 1px, transparent 1px), linear-gradient(to bottom, rgba(245,242,236,0.07) 1px, transparent 1px)",
           backgroundSize: "72px 72px",
         }}
-        animate={reduce ? undefined : { backgroundPositionX: ["0px", "72px"] }}
+        animate={{ backgroundPositionX: reduce ? "0px" : ["0px", "72px"] }}
         transition={{ duration: 24, repeat: Infinity, ease: "linear" }}
       />
       <div
