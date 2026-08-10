@@ -3,7 +3,6 @@ import { Reveal, Section, SectionLabel, staggerChild, staggerParent } from "./pr
 import drawingTube from "@/assets/drawing-tube.jpg.asset.json";
 import drawingFlange from "@/assets/drawing-flange.jpg.asset.json";
 import labels from "@/assets/labels.png.asset.json";
-import drawingTray from "@/assets/drawing-tray.jpg.asset.json";
 
 const examples = [
   {
@@ -63,17 +62,17 @@ export function Examples() {
       >
         {examples.map((e) => (
           <motion.li key={e.n} variants={staggerChild} className="group flex flex-col bg-card">
-            <div className="relative overflow-hidden border-b border-border bg-secondary">
+            <div className="overflow-hidden border-b border-border bg-secondary">
               <img
                 src={e.image}
                 alt={e.alt}
                 loading="lazy"
                 className="h-52 w-full object-cover object-center opacity-90 mix-blend-multiply transition-transform duration-[900ms] ease-out group-hover:scale-[1.03]"
               />
-              <span className="absolute bottom-3 left-4 font-mono text-[0.5625rem] tracking-[0.16em] text-muted-foreground uppercase">
-                {e.caption}
-              </span>
             </div>
+            <span className="border-b border-border px-8 py-3 font-mono text-[0.5625rem] tracking-[0.16em] text-muted-foreground uppercase">
+              {e.caption}
+            </span>
             <div className="flex flex-1 flex-col p-8">
               <div className="flex items-baseline gap-3">
                 <span className="font-mono text-[0.6875rem] tracking-[0.16em] text-muted-foreground">
@@ -100,19 +99,6 @@ export function Examples() {
         ))}
       </motion.ul>
 
-      <Reveal delay={0.1}>
-        <figure className="mt-10 border border-border bg-card p-4 md:p-6">
-          <img
-            src={drawingTray.url}
-            alt="CAD model of a deep-drawn tray tool quoted within a month of campaign launch"
-            loading="lazy"
-            className="w-full object-cover opacity-95"
-          />
-          <figcaption className="mt-4 font-mono text-[0.625rem] tracking-[0.16em] text-muted-foreground uppercase">
-            Tooling enquiry — quoted within one month of campaign launch
-          </figcaption>
-        </figure>
-      </Reveal>
     </Section>
   );
 }
