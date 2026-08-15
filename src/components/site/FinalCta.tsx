@@ -89,7 +89,7 @@ export function FinalCta() {
               href="mailto:sami@harborne-data.com"
               className="inline-flex items-center justify-center rounded-xs border border-border bg-background px-6 py-3.5 text-sm font-medium text-foreground transition-colors duration-300 hover:border-copper hover:text-copper-deep"
             >
-              Email sami@harborne-data.com
+              Send me an email
             </a>
           </div>
         </Reveal>
