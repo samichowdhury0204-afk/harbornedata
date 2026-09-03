@@ -4,6 +4,8 @@ const links = [
   { href: "#solutions", label: "Solutions" },
   { href: "#results", label: "Results" },
   { href: "#contact", label: "Contact" },
+  { href: "https://www.linkedin.com/company/146167928", label: "LinkedIn", external: true },
+  { href: "mailto:sami@harborne-data.com", label: "Email" },
 ];
 
 export function Footer() {
@@ -22,6 +24,8 @@ export function Footer() {
               <a
                 key={l.href}
                 href={l.href}
+                target={l.external ? "_blank" : undefined}
+                rel={l.external ? "noreferrer noopener" : undefined}
                 className="text-sm text-muted-foreground transition-colors duration-300 hover:text-copper-deep"
               >
                 {l.label}

@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 import { Reveal, Section, SectionLabel, staggerChild, staggerParent } from "./primitives";
 import drawingTube from "@/assets/drawing-tube.jpg";
 import drawingFlange from "@/assets/drawing-flange.jpg";
-import labels from "@/assets/labels.png";
+import labels from "@/assets/labels.webp";
 
 const examples = [
   {

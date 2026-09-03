@@ -142,10 +142,10 @@ export function Solutions() {
             >
               <div>
                 <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                  New opportunity
+                  Anonymised opportunity
                 </p>
                 <h3 className="mt-3 text-2xl font-semibold tracking-[-0.02em]">
-                  Example Engineering Ltd
+                  Automotive Manufacturer
                 </h3>
               </div>
               <span className="inline-flex items-center gap-2 rounded-full border border-copper/40 bg-[color-mix(in_oklab,var(--copper)_12%,transparent)] px-3 py-1 text-[0.625rem] uppercase tracking-[0.16em] text-copper-deep">

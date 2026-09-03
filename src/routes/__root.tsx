@@ -90,8 +90,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "Targeted prospecting, outbound and qualification for UK manufacturers and specialist industrial service firms.",
       },
+      { property: "og:url", content: "https://www.harborne-data.com/" },
+      { property: "og:image", content: "https://www.harborne-data.com/og-image.png" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      {
+        property: "og:image:alt",
+        content: "Harborne Data — a steady pipeline of new opportunities",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "https://www.harborne-data.com/og-image.png" },
     ],
     links: [
       {
