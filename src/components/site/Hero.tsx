@@ -35,7 +35,10 @@ export function Hero() {
         </motion.p>
 
         <h1 className="mt-7 max-w-4xl text-[2.5rem] leading-[1.05] font-semibold tracking-[-0.03em] text-balance md:text-6xl lg:text-[4.25rem]">
-          More B2B opportunities for UK manufacturers and specialist industrial service firms
+          We Build a Steady Pipeline of New Opportunities
+          <span className="mt-4 block text-xl leading-tight font-medium tracking-[-0.015em] text-copper-deep md:text-2xl lg:text-3xl">
+            for Established Manufacturers and Industrial Firms
+          </span>
         </h1>
 
         <motion.p
