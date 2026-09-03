@@ -48,8 +48,8 @@ export function Examples() {
       </Reveal>
       <Reveal delay={0.05}>
         <p className="mt-8 max-w-2xl text-2xl leading-[1.25] tracking-[-0.02em] text-balance md:text-3xl">
-          Different manufacturers need different sales problems solved. Here's what that can look
-          like.
+          The same process works across specialist manufacturing and industrial services. Here's
+          what that can look like.
         </p>
       </Reveal>
 
@@ -98,7 +98,6 @@ export function Examples() {
           </motion.li>
         ))}
       </motion.ul>
-
     </Section>
   );
 }

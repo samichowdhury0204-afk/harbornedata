@@ -68,7 +68,7 @@ export function FinalCta() {
         </Reveal>
         <Reveal delay={0.08}>
           <p className="mx-auto mt-7 max-w-xl text-base leading-relaxed text-primary-foreground/70 md:text-lg">
-            Tell us what you manufacture, who you want to sell to and where you want to grow.
+            Tell us what your business makes or does, who buys it and where you have capacity.
           </p>
         </Reveal>
         <Reveal delay={0.14}>
@@ -81,7 +81,10 @@ export function FinalCta() {
               className="group inline-flex items-center justify-center gap-2.5 rounded-xs bg-copper px-6 py-3.5 text-sm font-medium text-accent-foreground transition-colors duration-300 hover:bg-copper-light focus-visible:ring-2 focus-visible:ring-copper-light focus-visible:ring-offset-2 focus-visible:ring-offset-ink focus-visible:outline-none"
             >
               Schedule time with me
-              <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-1">
+              <span
+                aria-hidden
+                className="transition-transform duration-300 group-hover:translate-x-1"
+              >
                 →
               </span>
             </a>

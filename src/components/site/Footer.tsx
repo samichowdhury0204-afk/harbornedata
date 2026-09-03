@@ -14,7 +14,7 @@ export function Footer() {
           <div>
             <Logo className="h-7" />
             <p className="mt-4 text-sm text-muted-foreground">
-              Outsourced sales for manufacturers.
+              Outbound sales for UK manufacturers and specialist industrial service firms.
             </p>
           </div>
           <nav aria-label="Footer" className="flex flex-wrap gap-x-8 gap-y-3">

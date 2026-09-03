@@ -77,18 +77,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Harborne Data — Outsourced Sales for Manufacturers" },
+      { title: "Harborne Data — Outbound for UK Industry" },
       {
         name: "description",
         content:
-          "We find the right companies, start the conversation and hand qualified opportunities directly to your team.",
+          "We find and contact the right B2B buyers for UK manufacturers and specialist industrial service firms.",
       },
       { name: "author", content: "Harborne Data" },
-      { property: "og:title", content: "Harborne Data — Outsourced Sales for Manufacturers" },
+      { property: "og:title", content: "Harborne Data — Outbound for UK Industry" },
       {
         property: "og:description",
         content:
-          "Outsourced prospecting, outbound and qualification for UK and US manufacturers.",
+          "Targeted prospecting, outbound and qualification for UK manufacturers and specialist industrial service firms.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

@@ -31,11 +31,11 @@ export function Hero() {
           transition={{ duration: 0.6 }}
           className="label-xs"
         >
-          Outbound growth for manufacturers
+          Outbound sales for UK industry
         </motion.p>
 
         <h1 className="mt-7 max-w-4xl text-[2.5rem] leading-[1.05] font-semibold tracking-[-0.03em] text-balance md:text-6xl lg:text-[4.25rem]">
-          Predictable Growth for British and American Manufacturers
+          More B2B opportunities for UK manufacturers and specialist industrial service firms
         </h1>
 
         <motion.p
@@ -44,8 +44,8 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.36 }}
           className="mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl"
         >
-          Harborne Data finds the right companies, starts the conversation and hands qualified
-          opportunities directly to your team.
+          We identify the right buyers, start the conversation and hand qualified opportunities
+          directly to your team.
         </motion.p>
 
         <motion.div
@@ -60,7 +60,10 @@ export function Hero() {
             className="group inline-flex items-center gap-2.5 rounded-xs border border-border px-5 py-3 text-sm font-medium transition-colors duration-300 hover:border-copper hover:text-copper-deep"
           >
             See how it works
-            <span aria-hidden className="transition-transform duration-300 group-hover:translate-y-1">
+            <span
+              aria-hidden
+              className="transition-transform duration-300 group-hover:translate-y-1"
+            >
               ↓
             </span>
           </a>
@@ -75,7 +78,7 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="mt-10 text-sm text-muted-foreground"
         >
-          We handle the front end. You handle the work.
+          Built for owner-led firms with capacity for more work and buyers we can identify.
         </motion.p>
       </div>
     </section>

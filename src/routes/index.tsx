@@ -11,20 +11,20 @@ import { Footer } from "@/components/site/Footer";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Harborne Data — Outsourced Sales for Manufacturers" },
+      { title: "Harborne Data — Outbound for UK Industry" },
       {
         name: "description",
         content:
-          "Harborne Data finds the right companies, starts the conversation and hands qualified opportunities directly to your team.",
+          "Harborne Data finds and contacts the right B2B buyers for UK manufacturers and specialist industrial service firms.",
       },
       {
         property: "og:title",
-        content: "Harborne Data — Outsourced Sales for Manufacturers",
+        content: "Harborne Data — Outbound for UK Industry",
       },
       {
         property: "og:description",
         content:
-          "Targeted prospecting, outbound and opportunity qualification for UK and US manufacturers.",
+          "Targeted prospecting, outbound and opportunity qualification for UK manufacturers and specialist industrial service firms.",
       },
     ],
   }),
