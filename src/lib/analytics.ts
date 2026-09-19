@@ -2,7 +2,8 @@ export type ConsentChoice = "all" | "analytics" | "none";
 
 const consentKey = "harborne-consent-v1";
 const consentEvent = "harborne-consent-change";
-const measurementId = import.meta.env["VITE_GA_MEASUREMENT_ID"] as string | undefined;
+const measurementId =
+  (import.meta.env["VITE_GA_MEASUREMENT_ID"] as string | undefined) || "G-085450TC55";
 
 declare global {
   interface Window {
