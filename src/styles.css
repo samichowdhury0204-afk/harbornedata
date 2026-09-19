@@ -90,8 +90,7 @@
   --ink: oklch(0.235 0.024 220);
   --ink-deep: oklch(0.19 0.022 220);
   --grid-line: oklch(0.235 0.024 220 / 6%);
-  --font-sans:
-    "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-sans: "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-mono: "Geist Mono", ui-monospace, "SFMono-Regular", monospace;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
@@ -192,6 +191,61 @@
     var(--copper),
     color-mix(in oklab, var(--copper) 15%, transparent)
   );
+}
+
+.hero-highlight {
+  background-image: linear-gradient(
+    105deg,
+    oklch(0.43 0.065 43) 0%,
+    oklch(0.61 0.105 66) 25%,
+    oklch(0.34 0.04 215) 48%,
+    oklch(0.58 0.1 50) 72%,
+    oklch(0.43 0.065 43) 100%
+  );
+  background-size: 220% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: hero-lustre 8s ease-in-out infinite alternate;
+}
+
+.hero-highlight-metric {
+  animation-delay: -3s;
+}
+
+.hero-stat {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: linear-gradient(
+    105deg,
+    color-mix(in oklab, var(--copper) 9%, var(--background)) 0%,
+    color-mix(in oklab, var(--copper) 3%, var(--background)) 58%,
+    transparent 100%
+  );
+}
+
+.hero-stat::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    var(--copper),
+    color-mix(in oklab, var(--copper) 35%, transparent) 62%,
+    transparent
+  );
+}
+
+@keyframes hero-lustre {
+  from {
+    background-position: 0% 50%;
+  }
+  to {
+    background-position: 100% 50%;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
