@@ -118,16 +118,7 @@ function PrivacyPage() {
               You can ask for access, correction or deletion, object to direct marketing or other
               processing, ask us to restrict processing, or withdraw consent for optional tracking.
               Other rights may apply depending on the circumstances. Email{" "}
-              <a href="mailto:sami@harborne-data.com">sami@harborne-data.com</a>. You can also
-              complain to the{" "}
-              <a
-                href="https://ico.org.uk/make-a-complaint/"
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                Information Commissioner’s Office
-              </a>
-              .
+              <a href="mailto:sami@harborne-data.com">sami@harborne-data.com</a>.
             </p>
           </section>
           <section>
