@@ -2,9 +2,11 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { Logo, CtaLink } from "./primitives";
 import { cn } from "@/lib/utils";
+import { Moon, Sun } from "lucide-react";
+import { useTheme } from "@/lib/theme";
 
 const links = [
-  { href: "#solutions", label: "Solutions" },
+  { href: "#pricing", label: "Pricing" },
   { href: "#results", label: "Results" },
   { href: "#contact", label: "Contact" },
 ];
@@ -12,6 +14,7 @@ const links = [
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const { dark, toggleTheme } = useTheme();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -30,15 +33,14 @@ export function Nav() {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-all duration-500",
-        scrolled
-          ? "border-b border-border/80 bg-background/80 backdrop-blur-xl"
-          : "border-b border-transparent",
+        "site-nav fixed inset-x-0 top-0 z-50 bg-background text-foreground transition-shadow duration-500",
+        scrolled ? "border-b border-border/80 bg-background" : "border-b border-transparent",
       )}
     >
       <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-6 md:h-20 md:px-10">
         <a href="#top" aria-label="Harborne Data — home" className="flex items-center">
-          <Logo className="h-7 md:h-8" />
+          <Logo className="h-7 md:h-8 dark:hidden" />
+          <Logo variant="light" className="hidden h-7 md:h-8 dark:block" />
         </a>
 
         <nav aria-label="Primary" className="hidden items-center gap-9 md:flex">
@@ -53,32 +55,43 @@ export function Nav() {
           ))}
         </nav>
 
-        <div className="hidden md:block">
-          <CtaLink className="px-4 py-2.5 text-[0.8125rem]">Start a conversation</CtaLink>
-        </div>
+        <div className="ml-auto flex items-center gap-3 md:ml-0">
+          <button
+            type="button"
+            onClick={toggleTheme}
+            aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
+            title={dark ? "Switch to light mode" : "Switch to dark mode"}
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-foreground transition-colors hover:bg-secondary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-copper"
+          >
+            {dark ? <Sun size={18} aria-hidden /> : <Moon size={18} aria-hidden />}
+          </button>
+          <div className="hidden md:block">
+            <CtaLink className="px-4 py-2.5 text-[0.8125rem]">Book a call</CtaLink>
+          </div>
 
-        <button
-          type="button"
-          aria-label={open ? "Close menu" : "Open menu"}
-          aria-expanded={open}
-          onClick={() => setOpen((v) => !v)}
-          className="-mr-2 flex h-10 w-10 items-center justify-center md:hidden"
-        >
-          <span className="relative block h-3 w-5">
-            <span
-              className={cn(
-                "absolute left-0 h-px w-5 bg-foreground transition-all duration-300",
-                open ? "top-1.5 rotate-45" : "top-0",
-              )}
-            />
-            <span
-              className={cn(
-                "absolute left-0 h-px w-5 bg-foreground transition-all duration-300",
-                open ? "top-1.5 -rotate-45" : "top-3",
-              )}
-            />
-          </span>
-        </button>
+          <button
+            type="button"
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            onClick={() => setOpen((v) => !v)}
+            className="-mr-2 flex h-10 w-10 items-center justify-center md:hidden"
+          >
+            <span className="relative block h-3 w-5">
+              <span
+                className={cn(
+                  "absolute left-0 h-px w-5 bg-foreground transition-all duration-300",
+                  open ? "top-1.5 rotate-45" : "top-0",
+                )}
+              />
+              <span
+                className={cn(
+                  "absolute left-0 h-px w-5 bg-foreground transition-all duration-300",
+                  open ? "top-1.5 -rotate-45" : "top-3",
+                )}
+              />
+            </span>
+          </button>
+        </div>
       </div>
 
       <AnimatePresence>
@@ -104,9 +117,13 @@ export function Nav() {
                   {l.label}
                 </motion.a>
               ))}
-              <CtaLink className="mt-2 justify-center" href="#contact">
-                Start a conversation
-              </CtaLink>
+              <a
+                onClick={() => setOpen(false)}
+                className="mt-2 rounded-xs bg-primary px-5 py-3 text-center font-medium text-primary-foreground"
+                href="#contact"
+              >
+                Book a call →
+              </a>
             </nav>
           </motion.div>
         )}

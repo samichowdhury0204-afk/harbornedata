@@ -87,7 +87,7 @@ export function Hero() {
       </div>
 
       <div className="relative mx-auto mt-10 w-full max-w-6xl px-6 md:mt-12 md:px-10">
-        <div className="overflow-hidden border border-border bg-ink shadow-[0_24px_70px_-45px_rgba(16,32,37,0.55)]">
+        <div className="overflow-hidden border border-border bg-card shadow-[0_24px_70px_-45px_rgba(16,32,37,0.55)]">
           <MuxPlayer
             playbackId={playbackId}
             autoPlay="muted"
@@ -108,19 +108,7 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.46 }}
           className="mt-10 flex flex-wrap items-center gap-3"
         >
-          <CtaLink />
-          <a
-            href="#solutions"
-            className="group inline-flex items-center gap-2.5 rounded-xs border border-border px-5 py-3 text-sm font-medium transition-colors duration-300 hover:border-copper hover:text-copper-deep"
-          >
-            See how it works
-            <span
-              aria-hidden
-              className="transition-transform duration-300 group-hover:translate-y-1"
-            >
-              ↓
-            </span>
-          </a>
+          <CtaLink>Book a call</CtaLink>
         </motion.div>
       </div>
     </section>

@@ -118,23 +118,29 @@
 }
 
 .dark {
-  --background: oklch(0.129 0.042 264.695);
-  --foreground: oklch(0.984 0.003 247.858);
-  --card: oklch(0.208 0.042 265.755);
-  --card-foreground: oklch(0.984 0.003 247.858);
+  --background: oklch(0.195 0.018 220);
+  --foreground: oklch(0.935 0.012 80);
+  --card: oklch(0.24 0.019 220);
+  --card-foreground: oklch(0.935 0.012 80);
   --popover: oklch(0.208 0.042 265.755);
   --popover-foreground: oklch(0.984 0.003 247.858);
-  --primary: oklch(0.929 0.013 255.508);
-  --primary-foreground: oklch(0.208 0.042 265.755);
-  --secondary: oklch(0.279 0.041 260.031);
+  --primary: oklch(0.79 0.08 62);
+  --primary-foreground: oklch(0.195 0.018 220);
+  --secondary: oklch(0.26 0.019 220);
   --secondary-foreground: oklch(0.984 0.003 247.858);
   --muted: oklch(0.279 0.041 260.031);
-  --muted-foreground: oklch(0.704 0.04 256.788);
+  --muted-foreground: oklch(0.75 0.013 210);
   --accent: oklch(0.279 0.041 260.031);
   --accent-foreground: oklch(0.984 0.003 247.858);
   --destructive: oklch(0.704 0.191 22.216);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(1 0 0 / 10%);
+  --border: oklch(0.39 0.019 220);
+  --copper: oklch(0.75 0.085 60);
+  --copper-light: oklch(0.85 0.065 70);
+  --copper-deep: oklch(0.8 0.085 65);
+  --ink: oklch(0.935 0.012 80);
+  --ink-deep: oklch(0.87 0.02 80);
+  --grid-line: oklch(0.8 0.015 80 / 5%);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.551 0.027 264.364);
   --chart-1: oklch(0.488 0.243 264.376);
@@ -167,6 +173,85 @@
 
   ::selection {
     background: color-mix(in oklab, var(--copper) 28%, transparent);
+  }
+}
+
+/* A quiet ivory header in light mode; tonal charcoal in dark mode. */
+.site-nav {
+  color-scheme: light;
+  --background: oklch(0.962 0.009 85);
+  --foreground: oklch(0.235 0.024 220);
+  --primary: oklch(0.235 0.024 220);
+  --primary-foreground: oklch(0.962 0.009 85);
+  --secondary: oklch(0.936 0.011 85);
+  --muted-foreground: oklch(0.48 0.018 230);
+  --border: oklch(0.876 0.013 80);
+  --copper: oklch(0.66 0.09 52);
+  --copper-light: oklch(0.78 0.075 58);
+  --copper-deep: oklch(0.52 0.08 46);
+}
+
+.dark .hero-highlight {
+  background-image: linear-gradient(
+    105deg,
+    oklch(0.8 0.085 65),
+    oklch(0.94 0.025 85) 30%,
+    oklch(0.77 0.07 60) 60%,
+    oklch(0.9 0.035 80)
+  );
+}
+
+.dark .site-nav {
+  color-scheme: dark;
+  --background: oklch(0.22 0.012 220);
+  --foreground: oklch(0.935 0.012 80);
+  --primary: oklch(0.79 0.08 62);
+  --primary-foreground: oklch(0.195 0.018 220);
+  --secondary: oklch(0.27 0.012 220);
+  --muted-foreground: oklch(0.75 0.013 210);
+  --border: oklch(0.34 0.014 220);
+  --copper: oklch(0.75 0.085 60);
+  --copper-deep: oklch(0.8 0.085 65);
+}
+
+.dark .example-image {
+  background: oklch(0.91 0.01 85);
+}
+
+.flow-stage:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 27px;
+  top: 56px;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(var(--copper), var(--border));
+}
+
+.flow-icon {
+  animation: flow-pulse 4.8s ease-in-out infinite;
+}
+
+@keyframes flow-pulse {
+  0%,
+  24%,
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+  12% {
+    box-shadow: 0 0 0 7px color-mix(in oklab, var(--copper) 15%, transparent);
+    border-color: var(--copper);
+  }
+}
+
+@media (min-width: 768px) {
+  .flow-stage:not(:last-child)::after {
+    left: 56px;
+    top: 27px;
+    bottom: auto;
+    width: calc(100% - 56px);
+    height: 1px;
+    background: linear-gradient(to right, var(--copper), var(--border));
   }
 }
 

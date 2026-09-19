@@ -11,6 +11,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { themeBootstrap } from "../lib/theme";
 
 function NotFoundComponent() {
   return (
@@ -77,18 +78,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Harborne Data — Outbound for UK Industry" },
+      { title: "Harborne Data — AI-led B2B Outbound" },
       {
         name: "description",
         content:
-          "We find and contact the right B2B buyers for UK manufacturers and specialist industrial service firms.",
+          "AI-led B2B outbound through email and LinkedIn. We find the right buyers, start conversations and qualify opportunities for your team.",
       },
       { name: "author", content: "Harborne Data" },
-      { property: "og:title", content: "Harborne Data — Outbound for UK Industry" },
+      { property: "og:title", content: "Harborne Data — AI-led B2B Outbound" },
       {
         property: "og:description",
         content:
-          "Targeted prospecting, outbound and qualification for UK manufacturers and specialist industrial service firms.",
+          "Buyer research, targeted email and LinkedIn outreach, and qualified opportunities for B2B businesses.",
       },
       { property: "og:url", content: "https://www.harborne-data.com/" },
       { property: "og:image", content: "https://www.harborne-data.com/og-image.png" },
@@ -124,8 +125,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
+        <script dangerouslySetInnerHTML={{ __html: themeBootstrap }} />
         <HeadContent />
       </head>
       <body>

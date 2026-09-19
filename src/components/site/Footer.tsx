@@ -1,7 +1,7 @@
 import { Logo } from "./primitives";
 
 const links = [
-  { href: "#solutions", label: "Solutions" },
+  { href: "#pricing", label: "Pricing" },
   { href: "#results", label: "Results" },
   { href: "#contact", label: "Contact" },
   { href: "https://www.linkedin.com/company/146167928", label: "LinkedIn", external: true },
@@ -14,9 +14,10 @@ export function Footer() {
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-6 md:px-10">
         <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <div>
-            <Logo className="h-7" />
+            <Logo className="h-7 dark:hidden" />
+            <Logo variant="light" className="hidden h-7 dark:block" />
             <p className="mt-4 text-sm text-muted-foreground">
-              Outbound sales for UK manufacturers and specialist industrial service firms.
+              AI-led outbound for B2B businesses.
             </p>
           </div>
           <nav aria-label="Footer" className="flex flex-wrap gap-x-8 gap-y-3">

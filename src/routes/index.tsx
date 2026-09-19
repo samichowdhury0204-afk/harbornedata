@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Nav } from "@/components/site/Nav";
 import { Hero } from "@/components/site/Hero";
-import { Solutions } from "@/components/site/Handoff";
+import { Pricing } from "@/components/site/Pricing";
 // Services section removed from homepage composition per design
 import { Examples } from "@/components/site/Examples";
 // Roles section removed from homepage flow per request
@@ -11,20 +11,20 @@ import { Footer } from "@/components/site/Footer";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Harborne Data — Outbound for UK Industry" },
+      { title: "Harborne Data — AI-led B2B Outbound" },
       {
         name: "description",
         content:
-          "Harborne Data finds and contacts the right B2B buyers for UK manufacturers and specialist industrial service firms.",
+          "AI-led B2B outbound through email and LinkedIn. We find the right buyers, start conversations and qualify opportunities for your team.",
       },
       {
         property: "og:title",
-        content: "Harborne Data — Outbound for UK Industry",
+        content: "Harborne Data — AI-led B2B Outbound",
       },
       {
         property: "og:description",
         content:
-          "Targeted prospecting, outbound and opportunity qualification for UK manufacturers and specialist industrial service firms.",
+          "Buyer research, targeted email and LinkedIn outreach, and qualified opportunities for B2B businesses.",
       },
       { property: "og:url", content: "https://www.harborne-data.com/" },
       { property: "og:image", content: "https://www.harborne-data.com/og-image.png" },
@@ -46,7 +46,7 @@ function Index() {
       <Nav />
       <main>
         <Hero />
-        <Solutions />
+        <Pricing />
         <Examples />
         <FinalCta />
       </main>

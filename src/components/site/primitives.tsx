@@ -94,7 +94,7 @@ export function Section({
 }
 
 export function CtaLink({
-  children = "Start a conversation",
+  children = "Book a call",
   variant = "solid",
   className,
   href = "#contact",
@@ -110,7 +110,7 @@ export function CtaLink({
       className={cn(
         "group inline-flex items-center gap-2.5 rounded-xs px-5 py-3 text-sm font-medium transition-colors duration-300 focus-visible:ring-2 focus-visible:ring-copper focus-visible:ring-offset-2 focus-visible:ring-offset-background focus-visible:outline-none",
         variant === "solid"
-          ? "bg-ink text-primary-foreground hover:bg-ink-deep"
+          ? "bg-primary text-primary-foreground hover:opacity-90"
           : "border border-border text-foreground hover:border-copper hover:text-copper-deep",
         className,
       )}
@@ -119,7 +119,6 @@ export function CtaLink({
       <span
         aria-hidden
         className="transition-transform duration-300 group-hover:translate-x-1"
-        style={{ color: variant === "solid" ? "var(--copper-light)" : undefined }}
       >
         →
       </span>

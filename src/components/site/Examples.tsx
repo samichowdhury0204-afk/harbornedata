@@ -29,11 +29,11 @@ const examples = [
   },
   {
     n: "03",
-    title: "Prospect data",
+    title: "Prospect sourcing",
     problem:
       "An established firm needed contact data and lead generation in a niche where marketing data is notoriously hard to find.",
     solution:
-      "We built a database of 3,600+ prospects, which went on to generate tens of thousands of pounds of business value.",
+      "We built a database of 3,600+ prospects, after which our client closed tens of thousands of pounds in recurring contracts.",
     image: drawingFlange,
     alt: "Sectional engineering drawing of a flange used in the client's niche",
     caption: "Niche componentry market",
@@ -48,8 +48,8 @@ export function Examples() {
       </Reveal>
       <Reveal delay={0.05}>
         <p className="mt-8 max-w-2xl text-2xl leading-[1.25] tracking-[-0.02em] text-balance md:text-3xl">
-          The same process works across specialist manufacturing and industrial services. Here's
-          what that can look like.
+          Different businesses. Real opportunities. A few examples from our work in manufacturing
+          and industrial services.
         </p>
       </Reveal>
 
@@ -62,7 +62,7 @@ export function Examples() {
       >
         {examples.map((e) => (
           <motion.li key={e.n} variants={staggerChild} className="group flex flex-col bg-card">
-            <div className="overflow-hidden border-b border-border bg-secondary">
+            <div className="example-image overflow-hidden border-b border-border bg-secondary">
               <img
                 src={e.image}
                 alt={e.alt}
