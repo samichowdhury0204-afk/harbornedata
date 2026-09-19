@@ -56,7 +56,10 @@ export function Hero() {
               />
             </div>
             <p className="relative mt-2 text-sm font-medium tracking-[-0.015em] text-ink/75 sm:text-lg">
-              in pipeline
+              <span className="block">in pipeline</span>
+              <span className="mt-1 block text-xs font-normal text-muted-foreground sm:text-sm">
+                in 3 months
+              </span>
             </p>
           </motion.div>
 
@@ -70,7 +73,10 @@ export function Hero() {
               <AnimatedCounter from={5} to={30} delay={700} width="min-w-[3ch]" />
             </div>
             <p className="relative mt-2 text-sm font-medium tracking-[-0.015em] text-ink/75 sm:text-lg">
-              sales conversations
+              <span className="block">sales conversations</span>
+              <span className="mt-1 block text-xs font-normal text-muted-foreground sm:text-sm">
+                in 3 months
+              </span>
             </p>
           </motion.div>
         </div>
