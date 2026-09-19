@@ -96,6 +96,8 @@ export function Hero() {
         <div className="overflow-hidden border border-border bg-card shadow-[0_24px_70px_-45px_rgba(16,32,37,0.55)]">
           <MuxPlayer
             playbackId={playbackId}
+            accentColor="#D8A985"
+            thumbnailTime={4051}
             autoPlay="muted"
             muted
             playsInline
