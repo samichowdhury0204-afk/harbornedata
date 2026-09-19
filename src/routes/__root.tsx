@@ -12,6 +12,16 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { themeBootstrap } from "../lib/theme";
+import { PrivacyControls } from "@/components/site/PrivacyControls";
+
+const organizationSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Harborne Data",
+  url: "https://www.harborne-data.com/",
+  email: "sami@harborne-data.com",
+  sameAs: ["https://www.linkedin.com/company/146167928"],
+});
 
 function NotFoundComponent() {
   return (
@@ -85,6 +95,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "AI-led B2B outbound through email and LinkedIn. We find the right buyers, start conversations and qualify opportunities for your team.",
       },
       { name: "author", content: "Harborne Data" },
+      { name: "robots", content: "index, follow" },
       { property: "og:title", content: "Harborne Data — AI-led B2B Outbound" },
       {
         property: "og:description",
@@ -92,7 +103,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Buyer research, targeted email and LinkedIn outreach, and qualified opportunities for B2B businesses.",
       },
       { property: "og:url", content: "https://www.harborne-data.com/" },
-      { property: "og:image", content: "https://www.harborne-data.com/og-image.png" },
+      { property: "og:image", content: "https://www.harborne-data.com/og-image-v2.png" },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
       {
@@ -100,8 +111,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content: "Harborne Data — a steady pipeline of new opportunities",
       },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Harborne Data" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image", content: "https://www.harborne-data.com/og-image.png" },
+      { name: "twitter:title", content: "Harborne Data — AI-led B2B Outbound" },
+      {
+        name: "twitter:description",
+        content:
+          "Buyer research, targeted email and LinkedIn outreach, and qualified opportunities for B2B businesses.",
+      },
+      { name: "twitter:image", content: "https://www.harborne-data.com/og-image-v2.png" },
     ],
     links: [
       {
@@ -129,6 +147,10 @@ function RootShell({ children }: { children: ReactNode }) {
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeBootstrap }} />
         <HeadContent />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: organizationSchema }}
+        />
       </head>
       <body>
         {children}
@@ -145,6 +167,7 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
+      <PrivacyControls />
     </QueryClientProvider>
   );
 }

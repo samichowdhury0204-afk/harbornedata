@@ -4,6 +4,8 @@ import { Logo, CtaLink } from "./primitives";
 import { cn } from "@/lib/utils";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "@/lib/theme";
+import { trackEvent } from "@/lib/analytics";
+import { useLocation } from "@tanstack/react-router";
 
 const links = [
   { href: "#pricing", label: "Pricing" },
@@ -15,6 +17,7 @@ export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const { dark, toggleTheme } = useTheme();
+  const isHome = useLocation({ select: (location) => location.pathname === "/" });
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -38,7 +41,11 @@ export function Nav() {
       )}
     >
       <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-6 md:h-20 md:px-10">
-        <a href="#top" aria-label="Harborne Data — home" className="flex items-center">
+        <a
+          href={isHome ? "#top" : "/"}
+          aria-label="Harborne Data — home"
+          className="flex items-center"
+        >
           <Logo className="h-7 md:h-8 dark:hidden" />
           <Logo variant="light" className="hidden h-7 md:h-8 dark:block" />
         </a>
@@ -47,7 +54,7 @@ export function Nav() {
           {links.map((l) => (
             <a
               key={l.href}
-              href={l.href}
+              href={isHome ? l.href : `/${l.href}`}
               className="relative text-sm text-muted-foreground transition-colors duration-300 hover:text-foreground after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-full after:origin-right after:scale-x-0 after:bg-copper after:transition-transform after:duration-300 hover:after:origin-left hover:after:scale-x-100"
             >
               {l.label}
@@ -66,7 +73,13 @@ export function Nav() {
             {dark ? <Sun size={18} aria-hidden /> : <Moon size={18} aria-hidden />}
           </button>
           <div className="hidden md:block">
-            <CtaLink className="px-4 py-2.5 text-[0.8125rem]">Book a call</CtaLink>
+            <CtaLink
+              href={isHome ? "#contact" : "/#contact"}
+              trackingPlacement="navigation"
+              className="px-4 py-2.5 text-[0.8125rem]"
+            >
+              Book a call
+            </CtaLink>
           </div>
 
           <button
@@ -107,7 +120,7 @@ export function Nav() {
               {links.map((l, i) => (
                 <motion.a
                   key={l.href}
-                  href={l.href}
+                  href={isHome ? l.href : `/${l.href}`}
                   onClick={() => setOpen(false)}
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -118,9 +131,12 @@ export function Nav() {
                 </motion.a>
               ))}
               <a
-                onClick={() => setOpen(false)}
+                onClick={() => {
+                  setOpen(false);
+                  trackEvent("book_call_click", { placement: "mobile_navigation" });
+                }}
                 className="mt-2 rounded-xs bg-primary px-5 py-3 text-center font-medium text-primary-foreground"
-                href="#contact"
+                href={isHome ? "#contact" : "/#contact"}
               >
                 Book a call →
               </a>

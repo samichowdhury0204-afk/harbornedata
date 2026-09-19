@@ -10,6 +10,7 @@ import { Footer } from "@/components/site/Footer";
 
 export const Route = createFileRoute("/")({
   head: () => ({
+    links: [{ rel: "canonical", href: "https://www.harborne-data.com/" }],
     meta: [
       { title: "Harborne Data — AI-led B2B Outbound" },
       {
@@ -27,14 +28,14 @@ export const Route = createFileRoute("/")({
           "Buyer research, targeted email and LinkedIn outreach, and qualified opportunities for B2B businesses.",
       },
       { property: "og:url", content: "https://www.harborne-data.com/" },
-      { property: "og:image", content: "https://www.harborne-data.com/og-image.png" },
+      { property: "og:image", content: "https://www.harborne-data.com/og-image-v2.png" },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
       {
         property: "og:image:alt",
         content: "Harborne Data — a steady pipeline of new opportunities",
       },
-      { name: "twitter:image", content: "https://www.harborne-data.com/og-image.png" },
+      { name: "twitter:image", content: "https://www.harborne-data.com/og-image-v2.png" },
     ],
   }),
   component: Index,

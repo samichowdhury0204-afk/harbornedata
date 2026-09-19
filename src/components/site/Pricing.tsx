@@ -66,7 +66,7 @@ export function Pricing() {
               </li>
             ))}
           </ul>
-          <CtaLink>Book a call</CtaLink>
+          <CtaLink trackingPlacement="pricing">Book a call</CtaLink>
         </div>
         <div className="border-t border-border p-6 md:p-9 lg:border-t-0 lg:border-l">
           <div className="flex items-start justify-between gap-4">

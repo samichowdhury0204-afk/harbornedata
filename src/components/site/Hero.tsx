@@ -108,7 +108,7 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.46 }}
           className="mt-10 flex flex-wrap items-center gap-3"
         >
-          <CtaLink>Book a call</CtaLink>
+          <CtaLink trackingPlacement="hero">Book a call</CtaLink>
         </motion.div>
       </div>
     </section>

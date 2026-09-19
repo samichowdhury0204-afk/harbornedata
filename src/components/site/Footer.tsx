@@ -1,11 +1,12 @@
 import { Logo } from "./primitives";
 
 const links = [
-  { href: "#pricing", label: "Pricing" },
-  { href: "#results", label: "Results" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#pricing", label: "Pricing" },
+  { href: "/#results", label: "Results" },
+  { href: "/#contact", label: "Contact" },
   { href: "https://www.linkedin.com/company/146167928", label: "LinkedIn", external: true },
   { href: "mailto:sami@harborne-data.com", label: "Email" },
+  { href: "/privacy", label: "Privacy" },
 ];
 
 export function Footer() {
@@ -32,6 +33,13 @@ export function Footer() {
                 {l.label}
               </a>
             ))}
+            <button
+              type="button"
+              onClick={() => window.dispatchEvent(new Event("harborne-open-privacy-settings"))}
+              className="text-sm text-muted-foreground transition-colors duration-300 hover:text-copper-deep"
+            >
+              Privacy settings
+            </button>
           </nav>
         </div>
         <div className="flex flex-col gap-2 border-t border-border pt-6 font-mono text-[0.625rem] tracking-[0.16em] text-muted-foreground uppercase md:flex-row md:justify-between">

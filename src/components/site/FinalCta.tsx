@@ -1,10 +1,27 @@
 import { useTheme } from "@/lib/theme";
+import { trackEvent } from "@/lib/analytics";
+import { useEffect, useRef } from "react";
 import { Reveal, Section, SectionLabel } from "./primitives";
 
 const bookingUrl = "https://calendly.com/samichowdhury1708/30min";
 
 export function FinalCta() {
+  const iframeRef = useRef<HTMLIFrameElement>(null);
   const { dark } = useTheme();
+  useEffect(() => {
+    const onMessage = (event: MessageEvent) => {
+      if (
+        event.origin !== "https://calendly.com" ||
+        event.source !== iframeRef.current?.contentWindow
+      )
+        return;
+      if (event.data?.event === "calendly.event_scheduled") {
+        trackEvent("generate_lead", { method: "calendly" });
+      }
+    };
+    window.addEventListener("message", onMessage);
+    return () => window.removeEventListener("message", onMessage);
+  }, []);
   const params = new URLSearchParams({
     embed_domain: "harborne-data.com",
     embed_type: "Inline",
@@ -28,12 +45,20 @@ export function FinalCta() {
       </Reveal>
       <div className="mt-9 overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
         <iframe
+          ref={iframeRef}
           title="Book a 30-minute call with Sami at Harborne Data"
           src={`${bookingUrl}?${params.toString()}`}
           loading="lazy"
           className="block h-[780px] w-full border-0 sm:h-[720px]"
         />
       </div>
+      <p className="mt-4 text-sm text-muted-foreground">
+        Calendly handles the details you enter when booking. Read our{" "}
+        <a className="underline underline-offset-4 hover:text-copper-deep" href="/privacy">
+          privacy notice
+        </a>
+        .
+      </p>
       <p className="mt-4 text-sm text-muted-foreground">
         Calendar not loading?{" "}
         <a

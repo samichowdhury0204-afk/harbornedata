@@ -1,6 +1,7 @@
 import { motion, useReducedMotion, type Variants } from "motion/react";
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
+import { trackEvent } from "@/lib/analytics";
 import logoDark from "@/assets/harborne-logo.png";
 import logoLight from "@/assets/harborne-logo-light.png";
 import mark from "@/assets/harborne-mark.png";
@@ -98,15 +99,20 @@ export function CtaLink({
   variant = "solid",
   className,
   href = "#contact",
+  trackingPlacement = "site_cta",
 }: {
   children?: ReactNode;
   variant?: "solid" | "ghost";
   className?: string;
   href?: string;
+  trackingPlacement?: string;
 }) {
   return (
     <a
       href={href}
+      onClick={() => {
+        if (href.endsWith("#contact")) trackEvent("book_call_click", { placement: trackingPlacement });
+      }}
       className={cn(
         "group inline-flex items-center gap-2.5 rounded-xs px-5 py-3 text-sm font-medium transition-colors duration-300 focus-visible:ring-2 focus-visible:ring-copper focus-visible:ring-offset-2 focus-visible:ring-offset-background focus-visible:outline-none",
         variant === "solid"
@@ -116,10 +122,7 @@ export function CtaLink({
       )}
     >
       {children}
-      <span
-        aria-hidden
-        className="transition-transform duration-300 group-hover:translate-x-1"
-      >
+      <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-1">
         →
       </span>
     </a>
