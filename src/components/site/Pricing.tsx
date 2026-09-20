@@ -34,7 +34,7 @@ export function Pricing() {
   const [values, setValues] = useState(defaults);
   const customers = (values.opportunities * 3 * values.conversion) / 100;
   const revenue = customers * values.value;
-  const fee = 7500;
+  const fee = 6750;
   const net = revenue - fee;
   const roi = (net / fee) * 100;
   const opportunityRate =
@@ -49,8 +49,11 @@ export function Pricing() {
       <div className="mt-10 grid overflow-hidden rounded-xl border border-border lg:grid-cols-[0.9fr_1.1fr]">
         <div className="bg-card p-6 md:p-9">
           <p className="flex flex-wrap items-baseline gap-2">
-            <span className="text-5xl font-semibold tracking-[-0.055em] md:text-6xl">£2,500</span>
+            <span className="text-5xl font-semibold tracking-[-0.055em] md:text-6xl">£1,500–£3,000</span>
             <span className="text-muted-foreground">/ month</span>
+          </p>
+          <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+            Pricing depends on sourcing difficulty, outreach channels and campaign volume.
           </p>
           <p className="mt-5 text-sm leading-relaxed">
             Initial 3-month term. Rolling monthly after that.
@@ -175,10 +178,10 @@ export function Pricing() {
             </p>
           </div>
           <p className="mt-5 text-xs leading-relaxed text-muted-foreground">
-            Illustrative inputs, not a forecast or guarantee. Assumes customers are acquired within
-            three months; lifetime revenue may arrive later. ROI = (lifetime revenue − our fee) ÷
-            our fee. Our fee is the only cost included; this is not a profit calculation. An
-            opportunity is not a guaranteed sale.
+            Illustrative inputs, not a forecast or guarantee. Assumes a £2,250 monthly fee and
+            customers are acquired within three months; lifetime revenue may arrive later. ROI =
+            (lifetime revenue − our fee) ÷ our fee. Our fee is the only cost included; this is not
+            a profit calculation. An opportunity is not a guaranteed sale.
           </p>
         </div>
       </div>
