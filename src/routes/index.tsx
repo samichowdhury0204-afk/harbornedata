@@ -5,7 +5,6 @@ import { Pricing } from "@/components/site/Pricing";
 // Services section removed from homepage composition per design
 import { Examples } from "@/components/site/Examples";
 // Roles section removed from homepage flow per request
-import { FinalCta } from "@/components/site/FinalCta";
 import { Footer } from "@/components/site/Footer";
 
 export const Route = createFileRoute("/")({
@@ -49,7 +48,6 @@ function Index() {
         <Hero />
         <Pricing />
         <Examples />
-        <FinalCta />
       </main>
       <Footer />
     </div>

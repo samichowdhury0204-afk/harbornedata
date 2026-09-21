@@ -3,7 +3,7 @@ import { Logo } from "./primitives";
 const links = [
   { href: "/#pricing", label: "Pricing" },
   { href: "/#results", label: "Results" },
-  { href: "/#contact", label: "Contact" },
+  { href: "/book", label: "Book a call" },
   { href: "https://www.linkedin.com/company/146167928", label: "LinkedIn", external: true },
   { href: "mailto:sami@harborne-data.com", label: "Email" },
   { href: "/privacy", label: "Privacy" },

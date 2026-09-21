@@ -47,8 +47,9 @@ export function PrivacyControls() {
         <div className="max-w-lg">
           <h2 className="text-base font-semibold">Privacy choices</h2>
           <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-            Video and Calendly load to play the video and let you book. Optional Google analytics
-            and ad measurement run only if you choose them. You can change this later. Read our{" "}
+            Mux video loads on the homepage; Cal.com loads on the booking page. Optional Google
+            analytics and ad measurement run only if you choose them. You can change this later.
+            Read our{" "}
             <a href="/privacy" className="underline underline-offset-4">
               privacy notice
             </a>

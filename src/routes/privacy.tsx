@@ -24,7 +24,7 @@ function PrivacyPage() {
       <main className="mx-auto max-w-4xl px-6 pb-24 pt-32 md:px-10 md:pt-40">
         <p className="label-xs">Harborne Data Ltd</p>
         <h1 className="mt-5 text-4xl font-semibold tracking-tight md:text-5xl">Privacy notice</h1>
-        <p className="mt-5 text-sm text-muted-foreground">Last updated: 19 September 2026</p>
+        <p className="mt-5 text-sm text-muted-foreground">Last updated: 22 September 2026</p>
         <div className="mt-10 space-y-10 text-base leading-relaxed text-muted-foreground [&_h2]:mb-3 [&_h2]:text-xl [&_h2]:font-semibold [&_h2]:tracking-tight [&_h2]:text-foreground [&_a]:text-copper-deep [&_a]:underline [&_a]:underline-offset-4">
           <section>
             <h2>Who we are</h2>
@@ -64,12 +64,12 @@ function PrivacyPage() {
           <section>
             <h2>Video, booking and analytics</h2>
             <p>
-              The site uses Mux to deliver our video and Calendly to show available times and take
-              bookings. Their embedded content loads when you visit the relevant page section and
-              may use their own storage and collect technical usage data. Calendly handles the
-              details you enter in its booking form and sends meeting information to our calendar.
-              We do not have a separate CRM or spreadsheet tracking system for website bookings at
-              present.
+              The site uses Mux to deliver our video on the homepage and Cal.com to show available
+              times and take bookings on our separate booking page. Their embedded content loads
+              when you visit the relevant page and may use their own storage and collect technical
+              usage data. Cal.com handles the details you enter in its booking form and sends
+              meeting information to our calendar. We do not have a separate CRM or spreadsheet
+              tracking system for website bookings at present.
             </p>
             <p className="mt-3">
               A local setting remembers your light or dark theme. Optional Google Analytics and
@@ -86,7 +86,7 @@ function PrivacyPage() {
               We use local storage to remember your theme and privacy choice. If you permit
               analytics or advertising measurement, Google may use cookies and similar technology to
               measure visits and conversions. You can refuse optional measurement or change your
-              choice at any time through the Privacy settings link. Calendly and Mux may use their
+              choice at any time through the Privacy settings link. Cal.com and Mux may use their
               own storage when their content loads; their own privacy and cookie information is
               available through those services.
             </p>
@@ -95,7 +95,7 @@ function PrivacyPage() {
             <h2>Who receives your data</h2>
             <p>
               Relevant service providers may process data for us, including our website host, Mux,
-              Calendly, Google, email and calendar providers, and outbound campaign tools such as
+              Cal.com, Google, email and calendar providers, and outbound campaign tools such as
               Instantly. Client campaign information may also be shared with the client for whom we
               are working. We share only what is needed to provide the service. These providers may
               process data outside the UK; where required, we use applicable safeguards and can

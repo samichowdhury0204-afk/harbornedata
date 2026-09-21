@@ -98,7 +98,7 @@ export function CtaLink({
   children = "Book a call",
   variant = "solid",
   className,
-  href = "#contact",
+  href = "/book",
   trackingPlacement = "site_cta",
 }: {
   children?: ReactNode;
@@ -111,7 +111,7 @@ export function CtaLink({
     <a
       href={href}
       onClick={() => {
-        if (href.endsWith("#contact")) trackEvent("book_call_click", { placement: trackingPlacement });
+        if (href === "/book") trackEvent("book_call_click", { placement: trackingPlacement });
       }}
       className={cn(
         "group inline-flex items-center gap-2.5 rounded-xs px-5 py-3 text-sm font-medium transition-colors duration-300 focus-visible:ring-2 focus-visible:ring-copper focus-visible:ring-offset-2 focus-visible:ring-offset-background focus-visible:outline-none",
