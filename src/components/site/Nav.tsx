@@ -10,7 +10,6 @@ import { useLocation } from "@tanstack/react-router";
 const links = [
   { href: "#pricing", label: "Pricing" },
   { href: "#results", label: "Results" },
-  { href: "/book", label: "Book a call" },
 ];
 
 export function Nav() {
@@ -54,7 +53,7 @@ export function Nav() {
           {links.map((l) => (
             <a
               key={l.href}
-              href={l.href.startsWith("/") ? l.href : isHome ? l.href : `/${l.href}`}
+              href={isHome ? l.href : `/${l.href}`}
               className="relative text-sm text-muted-foreground transition-colors duration-300 hover:text-foreground after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-full after:origin-right after:scale-x-0 after:bg-copper after:transition-transform after:duration-300 hover:after:origin-left hover:after:scale-x-100"
             >
               {l.label}
@@ -120,7 +119,7 @@ export function Nav() {
               {links.map((l, i) => (
                 <motion.a
                   key={l.href}
-                  href={l.href.startsWith("/") ? l.href : isHome ? l.href : `/${l.href}`}
+                  href={isHome ? l.href : `/${l.href}`}
                   onClick={() => setOpen(false)}
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
