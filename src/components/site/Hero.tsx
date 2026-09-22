@@ -35,7 +35,7 @@ export function Hero() {
           transition={{ duration: 0.75, ease: [0.22, 0.61, 0.36, 1] }}
           className="max-w-5xl text-[2.9rem] leading-[1.02] font-semibold tracking-[-0.055em] text-balance text-ink md:text-[4.75rem] lg:text-[5.5rem]"
         >
-          Intelligent <span className="hero-highlight">outbound.</span>
+          AI-led <span className="hero-highlight">cold outbound.</span>
         </motion.h1>
 
         <div className="mt-8 grid max-w-[820px] grid-cols-2 gap-3 sm:gap-6">
@@ -88,7 +88,7 @@ export function Hero() {
           className="mt-5 flex items-center gap-3 text-base font-normal text-muted-foreground md:text-lg"
         >
           <span aria-hidden className="h-px w-7 bg-copper" />
-          Research-led. Built to learn your market.
+          Using email and LinkedIn
         </motion.p>
       </div>
 

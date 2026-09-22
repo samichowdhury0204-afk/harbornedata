@@ -8,7 +8,6 @@ import { trackEvent } from "@/lib/analytics";
 import { useLocation } from "@tanstack/react-router";
 
 const links = [
-  { href: "#intelligent-outbound", label: "Our approach" },
   { href: "#pricing", label: "Pricing" },
   { href: "#results", label: "Results" },
 ];

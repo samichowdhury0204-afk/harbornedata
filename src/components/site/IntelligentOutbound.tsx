@@ -1,14 +1,6 @@
-import {
-  useEffect,
-  useRef,
-  useState,
-  type Dispatch,
-  type ReactNode,
-  type SetStateAction,
-} from "react";
+import { useEffect, useRef, useState, type Dispatch, type SetStateAction } from "react";
 import { useInView, useReducedMotion } from "motion/react";
-import { ArrowDownRight, ArrowRight, Check, Pause, Play } from "lucide-react";
-import { Reveal, SectionLabel } from "./primitives";
+import { Pause, Play } from "lucide-react";
 import "./intelligent-outbound.css";
 
 const stages = [
@@ -75,19 +67,6 @@ const stages = [
     body: "Replies, objections, segment performance and your sales feedback feed back into targeting and messaging. The campaign in month three should be better informed than the campaign in week one.",
     evidence: ["Replies", "Objections", "Segment evidence", "Refined ICP"],
   },
-] as const;
-
-const comparison = [
-  ["Understanding the offer", "Brief intake", "Commercial deep dive"],
-  ["Finding accounts", "Broad database filters", "Lookalikes and niche discovery"],
-  ["Qualifying fit", "Often list-level", "Account-level research"],
-  ["Choosing buyers", "Fixed title filters", "Roles mapped to the buying process"],
-  ["Developing copy", "One main sequence", "Multiple angles tested"],
-  ["Reading responses", "Activity and reply counts", "Interest, objections and context"],
-  ["Adapting campaigns", "Periodic list or copy edits", "Continuous ICP and message refinement"],
-  ["First-month review", "Varies by provider", "Joint evidence review"],
-  ["Channel strategy", "Often email-first", "Broadened where suitable"],
-  ["Sales collaboration", "Usually limited", "Feedback carried into the next cycle"],
 ] as const;
 
 function StageVisual({ stage }: { stage: number }) {
@@ -283,7 +262,7 @@ function Engine() {
       <div className="io-engine-heading">
         <div>
           <p className="io-kicker">THE INTELLIGENT OUTBOUND ENGINE</p>
-          <h3>From business context to market evidence. Then back again.</h3>
+          <h2 id="io-heading">From business context to market evidence. Then back again.</h2>
         </div>
         <button
           className="io-play"
@@ -360,7 +339,7 @@ function Engine() {
             <span className="io-detail-index">
               {stage.number} / 07 <i /> {stage.name.toUpperCase()}
             </span>
-            <h4>{stage.title}</h4>
+            <h3>{stage.title}</h3>
             <p>{stage.body}</p>
             <div className="io-evidence">
               {stage.evidence.map((item) => (
@@ -377,12 +356,6 @@ function Engine() {
           <MobileStage key={stage.number} stage={stage} index={index} />
         ))}
       </div>
-      <div className="io-engine-footer">
-        <span>RESEARCH-LED</span>
-        <span>HUMAN-DIRECTED</span>
-        <span>CONTINUOUSLY REFINED</span>
-        <span className="io-engine-footer-arrow">↺</span>
-      </div>
     </div>
   );
 }
@@ -395,7 +368,7 @@ function MobileStage({ stage, index }: { stage: (typeof stages)[number]; index: 
       <span className="io-mobile-index">{stage.number}</span>
       <div>
         <p className="io-kicker">{stage.name}</p>
-        <h4>{stage.title}</h4>
+        <h3>{stage.title}</h3>
         <p className="io-mobile-body">{stage.body}</p>
         <StageVisual stage={index} />
       </div>
@@ -415,24 +388,6 @@ function useStageTour(running: boolean, setActive: Dispatch<SetStateAction<numbe
   }, [running, setActive]);
 }
 
-function Chapter({
-  label,
-  title,
-  children,
-}: {
-  label: string;
-  title: string;
-  children: ReactNode;
-}) {
-  return (
-    <div className="io-chapter">
-      <span>{label}</span>
-      <strong>{title}</strong>
-      <p>{children}</p>
-    </div>
-  );
-}
-
 export function IntelligentOutbound() {
   return (
     <section
@@ -441,255 +396,7 @@ export function IntelligentOutbound() {
       aria-labelledby="io-heading"
     >
       <div className="io-container">
-        <Reveal>
-          <SectionLabel>Intelligent-first outbound</SectionLabel>
-        </Reveal>
-        <div className="io-intro-grid">
-          <Reveal delay={0.05}>
-            <h2 id="io-heading">
-              Outbound that <em>learns</em> your market.
-            </h2>
-          </Reveal>
-          <Reveal delay={0.12}>
-            <p className="io-intro-lead">
-              The first campaign is a starting hypothesis. We build the account universe, test where
-              demand might sit, listen to the market and refine the system as evidence comes back.
-            </p>
-            <p className="io-intro-note">
-              Your team knows the business. We turn that knowledge into a better way to find and
-              engage its next customers.
-            </p>
-          </Reveal>
-        </div>
-        <div className="io-chapters">
-          <Chapter label="01 / UNDERSTAND" title="The business">
-            What you sell, who buys, and which work is worth winning.
-          </Chapter>
-          <Chapter label="02 / TEST" title="The market">
-            Which accounts, buyers and messages create real interest.
-          </Chapter>
-          <Chapter label="03 / LEARN" title="The next move">
-            What to scale, change or expand after the market responds.
-          </Chapter>
-        </div>
         <Engine />
-
-        <div className="io-ai-note">
-          <span className="io-ai-note-icon">✳</span>
-          <p>
-            <strong>Modern tools make the research deeper.</strong> AI assists with similarity,
-            classification, enrichment and pattern finding. People set the commercial criteria,
-            check the fit and decide what changes.
-          </p>
-        </div>
-
-        <div className="io-review" aria-labelledby="io-review-heading">
-          <div className="io-review-intro">
-            <div>
-              <SectionLabel>The 30-day adaptation point</SectionLabel>
-              <h2 id="io-review-heading">
-                Month one creates the evidence.
-                <br />
-                <em>Month two uses it.</em>
-              </h2>
-            </div>
-            <p>
-              After roughly a month of live activity, we review the campaign together. We look
-              beyond sends and opens: which segments engage, what prospects object to, where useful
-              conversations appear, and what your sales team is hearing.
-            </p>
-          </div>
-          <div className="io-timeline">
-            <div className="io-timeline-track" aria-hidden="true" />
-            <div className="io-week">
-              <span>WEEK 01</span>
-              <strong>Launch</strong>
-              <small>Baseline signals</small>
-            </div>
-            <div className="io-week">
-              <span>WEEK 02</span>
-              <strong>Read</strong>
-              <small>Audience response</small>
-            </div>
-            <div className="io-week">
-              <span>WEEK 03</span>
-              <strong>Compare</strong>
-              <small>Angles & objections</small>
-            </div>
-            <div className="io-week">
-              <span>WEEK 04</span>
-              <strong>Review</strong>
-              <small>Sales feedback</small>
-            </div>
-            <div className="io-review-node">
-              <span className="io-indicator" /> PERFORMANCE REVIEW
-            </div>
-          </div>
-          <div className="io-review-branches">
-            <div>
-              <ArrowDownRight size={18} aria-hidden />
-              <strong>Scale what works</strong>
-              <span>Segments and messages with real traction.</span>
-            </div>
-            <div>
-              <ArrowDownRight size={18} aria-hidden />
-              <strong>Refine targeting</strong>
-              <span>Improve fit and remove weak pockets.</span>
-            </div>
-            <div>
-              <ArrowDownRight size={18} aria-hidden />
-              <strong>Test new angles</strong>
-              <span>Use objections and interest to guide copy.</span>
-            </div>
-            <div>
-              <ArrowDownRight size={18} aria-hidden />
-              <strong>Broaden the route</strong>
-              <span>Add suitable channels when needed.</span>
-            </div>
-          </div>
-          <div className="io-channel-callout">
-            <div>
-              <span className="io-kicker">WHEN THE EVIDENCE CALLS FOR IT</span>
-              <h3>More channels. Not another management fee.</h3>
-            </div>
-            <p>
-              If the first-month review shows results materially below the level we agreed to assess
-              against, we will work out why. Where a broader route is appropriate, we can agree
-              additional outreach methods, such as calling, within the campaign scope without
-              increasing our management fee.
-            </p>
-          </div>
-        </div>
-
-        <div className="io-comparison" aria-labelledby="io-comparison-heading">
-          <div className="io-comparison-intro">
-            <div>
-              <SectionLabel>A different operating model</SectionLabel>
-              <h2 id="io-comparison-heading">The difference is in what happens after “send”.</h2>
-            </div>
-            <p>
-              Volume-first outreach can produce activity. Our model is designed to turn activity
-              into market intelligence, then use that intelligence to improve the next campaign
-              decision.
-            </p>
-          </div>
-          <div className="io-two-models">
-            <div className="io-model-typical">
-              <span className="io-kicker">COMMON VOLUME-FIRST MODEL</span>
-              <div className="io-model-line">
-                <span>Database filters</span>
-                <ArrowRight size={16} />
-                <span>Large list</span>
-                <ArrowRight size={16} />
-                <span>One sequence</span>
-                <ArrowRight size={16} />
-                <span>Activity report</span>
-              </div>
-            </div>
-            <div className="io-model-harborne">
-              <span className="io-kicker">HARBORNE DATA</span>
-              <div className="io-model-line">
-                <span>Commercial context</span>
-                <ArrowRight size={16} />
-                <span>Qualified accounts</span>
-                <ArrowRight size={16} />
-                <span>Tested angles</span>
-                <ArrowRight size={16} />
-                <span>Market signals</span>
-                <b>↺ REFINE</b>
-              </div>
-            </div>
-          </div>
-          <div className="io-matrix" role="table" aria-label="Operating model comparison">
-            <div className="io-matrix-head" role="row">
-              <span role="columnheader">OPERATING DECISION</span>
-              <span role="columnheader">COMMON VOLUME-FIRST MODEL</span>
-              <span role="columnheader">HARBORNE DATA</span>
-            </div>
-            {comparison.map(([label, typical, harborne]) => (
-              <div className="io-matrix-row" role="row" key={label}>
-                <span role="cell">{label}</span>
-                <span role="cell">{typical}</span>
-                <span role="cell">
-                  <Check size={15} strokeWidth={1.7} aria-hidden />
-                  {harborne}
-                </span>
-              </div>
-            ))}
-          </div>
-          <p className="io-comparison-footnote">
-            The comparison describes common approaches, not every other provider. Scope and channels
-            are agreed for each campaign.
-          </p>
-        </div>
-
-        <div className="io-human" aria-labelledby="io-human-heading">
-          <div className="io-human-copy">
-            <SectionLabel>Built around your business</SectionLabel>
-            <h2 id="io-human-heading">
-              AI-assisted research. <em>Human-directed decisions.</em>
-            </h2>
-            <p>
-              We spend time with your team learning the details that a database cannot tell us:
-              high-value work, poor-fit projects, buying triggers, commercial constraints,
-              terminology and objections.
-            </p>
-            <p>
-              That knowledge is combined with market research and live campaign signals. The aim is
-              simple: make increasingly informed decisions about who to contact, why them and what
-              to say.
-            </p>
-            <a href="#pricing" className="io-pricing-link">
-              See how the partnership is priced <ArrowRight size={17} aria-hidden />
-            </a>
-          </div>
-          <div
-            className="io-human-visual"
-            role="img"
-            aria-label="Client knowledge, market data and campaign signals inform better outbound decisions"
-          >
-            <div className="io-human-tags">
-              <span>PRODUCTS</span>
-              <span>CUSTOMERS</span>
-              <span>IDEAL PROJECTS</span>
-              <span>BUYING TRIGGERS</span>
-              <span>OBJECTIONS</span>
-              <span>SALES FEEDBACK</span>
-            </div>
-            <div className="io-human-core">
-              <span className="io-indicator" />
-              <strong>CLIENT KNOWLEDGE</strong>
-              <small>learned with your team</small>
-            </div>
-            <div className="io-human-equation">
-              <div>
-                <span>CLIENT CONTEXT</span>
-                <b>+</b>
-                <span>MARKET DATA</span>
-                <b>+</b>
-                <span>LIVE SIGNALS</span>
-              </div>
-              <strong>
-                BETTER OUTBOUND DECISIONS <ArrowRight size={17} aria-hidden />
-              </strong>
-            </div>
-          </div>
-        </div>
-
-        <div className="io-to-pricing">
-          <div>
-            <span className="io-kicker">THE SYSTEM, FULLY MANAGED</span>
-            <h2>
-              Research. Outreach. Learning.
-              <br />
-              <em>One connected service.</em>
-            </h2>
-          </div>
-          <p>
-            Here is what the ongoing partnership costs, and how to think about its commercial
-            return.
-          </p>
-        </div>
       </div>
     </section>
   );

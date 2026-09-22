@@ -1,7 +1,6 @@
 import { Logo } from "./primitives";
 
 const links = [
-  { href: "/#intelligent-outbound", label: "Our approach" },
   { href: "/#pricing", label: "Pricing" },
   { href: "/#results", label: "Results" },
   { href: "/book", label: "Book a call" },
@@ -19,7 +18,7 @@ export function Footer() {
             <Logo className="h-7 dark:hidden" />
             <Logo variant="light" className="hidden h-7 dark:block" />
             <p className="mt-4 text-sm text-muted-foreground">
-              Research-led outbound for B2B businesses.
+              AI-led outbound for B2B businesses.
             </p>
           </div>
           <nav aria-label="Footer" className="flex flex-wrap gap-x-8 gap-y-3">

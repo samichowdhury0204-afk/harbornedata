@@ -12,20 +12,20 @@ export const Route = createFileRoute("/")({
   head: () => ({
     links: [{ rel: "canonical", href: "https://www.harborne-data.com/" }],
     meta: [
-      { title: "Harborne Data — Intelligent B2B Outbound" },
+      { title: "Harborne Data — AI-led B2B Outbound" },
       {
         name: "description",
         content:
-          "Research-led B2B outbound that learns your market. We discover and qualify accounts, test messages, run outreach and refine campaigns from real responses.",
+          "AI-led B2B outbound through email and LinkedIn. We find the right buyers, start conversations and qualify opportunities for your team.",
       },
       {
         property: "og:title",
-        content: "Harborne Data — Intelligent B2B Outbound",
+        content: "Harborne Data — AI-led B2B Outbound",
       },
       {
         property: "og:description",
         content:
-          "Research-led targeting, tested messaging and adaptive outbound for B2B businesses.",
+          "Buyer research, targeted email and LinkedIn outreach, and qualified opportunities for B2B businesses.",
       },
       { property: "og:url", content: "https://www.harborne-data.com/" },
       { property: "og:image", content: "https://www.harborne-data.com/og-image-v2.png" },
