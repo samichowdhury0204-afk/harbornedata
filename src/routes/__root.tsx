@@ -88,19 +88,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Harborne Data — AI-led B2B Outbound" },
+      { title: "Harborne Data — Intelligent B2B Outbound" },
       {
         name: "description",
         content:
-          "AI-led B2B outbound through email and LinkedIn. We find the right buyers, start conversations and qualify opportunities for your team.",
+          "Research-led B2B outbound that learns your market. We discover and qualify accounts, test messages, run outreach and refine campaigns from real responses.",
       },
       { name: "author", content: "Harborne Data" },
       { name: "robots", content: "index, follow" },
-      { property: "og:title", content: "Harborne Data — AI-led B2B Outbound" },
+      { property: "og:title", content: "Harborne Data — Intelligent B2B Outbound" },
       {
         property: "og:description",
         content:
-          "Buyer research, targeted email and LinkedIn outreach, and qualified opportunities for B2B businesses.",
+          "Research-led targeting, tested messaging and adaptive outbound for B2B businesses.",
       },
       { property: "og:url", content: "https://www.harborne-data.com/" },
       { property: "og:image", content: "https://www.harborne-data.com/og-image-v2.png" },
@@ -113,11 +113,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Harborne Data" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Harborne Data — AI-led B2B Outbound" },
+      { name: "twitter:title", content: "Harborne Data — Intelligent B2B Outbound" },
       {
         name: "twitter:description",
         content:
-          "Buyer research, targeted email and LinkedIn outreach, and qualified opportunities for B2B businesses.",
+          "Research-led targeting, tested messaging and adaptive outbound for B2B businesses.",
       },
       { name: "twitter:image", content: "https://www.harborne-data.com/og-image-v2.png" },
     ],
