@@ -49,7 +49,7 @@ export function Pricing() {
       <div className="mt-10 grid overflow-hidden rounded-xl border border-border lg:grid-cols-[0.9fr_1.1fr]">
         <div className="bg-card p-6 md:p-9">
           <p className="flex flex-wrap items-baseline gap-2">
-            <span className="text-5xl font-semibold tracking-[-0.055em] md:text-6xl">£1,500–£3,000</span>
+            <span className="text-5xl font-semibold tracking-[-0.055em] md:text-6xl">£2,000–£3,000</span>
             <span className="text-muted-foreground">/ month</span>
           </p>
           <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
