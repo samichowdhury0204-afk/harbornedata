@@ -5,7 +5,7 @@ import { CtaLink, Section, SectionLabel } from "./primitives";
 const inclusions = [
   "Ideal customer targeting & prospect research",
   "Campaign copy & personalised messaging",
-  "Email & LinkedIn campaign management",
+  "Email campaign management",
   "Follow-ups & reply handling",
   "Qualification & opportunity handover",
   "Campaign reporting & ongoing optimisation",

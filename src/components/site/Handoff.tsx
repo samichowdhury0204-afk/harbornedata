@@ -6,7 +6,7 @@ const stages = [
   { title: "Target", detail: "Find the right companies and decision-makers.", icon: Crosshair },
   {
     title: "Engage",
-    detail: "Start relevant conversations through email and LinkedIn.",
+    detail: "Start relevant conversations through targeted email.",
     icon: Send,
   },
   { title: "Qualify", detail: "Check interest, fit and the next step.", icon: CheckCheck },

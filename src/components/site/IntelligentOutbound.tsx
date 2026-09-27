@@ -46,7 +46,7 @@ const stages = [
     mapName: "Campaign engine",
     short: "Managed outreach",
     title: "Turn the research into managed outreach.",
-    body: "Qualified prospects enter targeted email and LinkedIn campaigns with deliberate follow-ups and reply capture. We control volume, monitor the conversations and keep testing as the campaign runs.",
+    body: "Qualified prospects enter targeted email campaigns with deliberate follow-ups and reply capture. We control volume, monitor the conversations and keep testing as the campaign runs.",
     evidence: ["Targeted sends", "Follow-up logic", "Reply capture", "Continuous testing"],
   },
   {
@@ -177,7 +177,7 @@ function StageVisual({ stage }: { stage: number }) {
             <b>→</b>
           </div>
           <div className="io-campaign-lane">
-            <span>LINKEDIN</span>
+            <span>FOLLOW-UP</span>
             <div>
               {Array.from({ length: 4 }, (_, i) => (
                 <i key={i} style={{ animationDelay: `${i * 0.23 + 0.3}s` }} />
