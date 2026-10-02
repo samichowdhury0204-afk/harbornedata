@@ -35,7 +35,7 @@ export function Hero() {
           transition={{ duration: 0.75, ease: [0.22, 0.61, 0.36, 1] }}
           className="max-w-5xl text-[2.9rem] leading-[1.02] font-semibold tracking-[-0.055em] text-balance text-ink md:text-[4.75rem] lg:text-[5.5rem]"
         >
-          AI-led <span className="hero-highlight">cold email.</span>
+          AI-led <span className="hero-highlight">cold outbound.</span>
         </motion.h1>
 
         <div className="mt-8 grid max-w-[820px] grid-cols-2 gap-3 sm:gap-6">
@@ -57,9 +57,6 @@ export function Hero() {
             </div>
             <p className="relative mt-2 text-sm font-medium tracking-[-0.015em] text-ink/75 sm:text-lg">
               <span className="block">in pipeline</span>
-              <span className="mt-1 block text-xs font-normal text-muted-foreground sm:text-sm">
-                in 3 months
-              </span>
             </p>
           </motion.div>
 
@@ -74,12 +71,10 @@ export function Hero() {
             </div>
             <p className="relative mt-2 text-sm font-medium tracking-[-0.015em] text-ink/75 sm:text-lg">
               <span className="block">sales conversations</span>
-              <span className="mt-1 block text-xs font-normal text-muted-foreground sm:text-sm">
-                in 3 months
-              </span>
             </p>
           </motion.div>
         </div>
+        <p className="mt-3 max-w-[820px] text-center text-xs font-normal text-muted-foreground sm:text-sm">in 3 months</p>
 
         <motion.p
           initial={reduce ? false : { opacity: 0, y: 8 }}
@@ -88,7 +83,7 @@ export function Hero() {
           className="mt-5 flex items-center gap-3 text-base font-normal text-muted-foreground md:text-lg"
         >
           <span aria-hidden className="h-px w-7 bg-copper" />
-          Managed email outreach for B2B businesses
+          Managed outreach for B2B businesses
         </motion.p>
       </div>
 
