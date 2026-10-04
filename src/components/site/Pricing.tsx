@@ -3,12 +3,12 @@ import { Check } from "lucide-react";
 import { CtaLink, Section, SectionLabel } from "./primitives";
 
 const inclusions = [
-  "Ideal customer targeting & prospect research",
-  "Campaign copy & personalised messaging",
-  "Email campaign management",
-  "Follow-ups & reply handling",
-  "Qualification & opportunity handover",
-  "Campaign reporting & ongoing optimisation",
+  "Exhaustive TAM mapping & continuous market development",
+  "Decision-maker contact sourcing",
+  "Sending infrastructure, warm-up & deliverability",
+  "AI-enriched copy & personalised messaging",
+  "Managed campaigns, follow-ups & ongoing optimisation",
+  "Reply management, qualification & opportunity handover",
 ];
 const fields = [
   { key: "prospects", label: "Prospects contacted / month", min: 0, max: 1000000, step: 100 },
@@ -34,7 +34,7 @@ export function Pricing() {
   const [values, setValues] = useState(defaults);
   const customers = (values.opportunities * 3 * values.conversion) / 100;
   const revenue = customers * values.value;
-  const fee = 6750;
+  const fee = 8250;
   const net = revenue - fee;
   const roi = (net / fee) * 100;
   const opportunityRate =
@@ -44,22 +44,25 @@ export function Pricing() {
     <Section id="pricing" className="py-20 md:py-24">
       <SectionLabel>Pricing</SectionLabel>
       <h2 className="mt-6 text-3xl font-semibold tracking-[-0.035em] md:text-5xl">
-        One fee. Fully managed outbound
+        One offer. Fully managed outbound
       </h2>
       <div className="mt-10 grid overflow-hidden rounded-xl border border-border lg:grid-cols-[0.9fr_1.1fr]">
         <div className="bg-card p-6 md:p-9">
           <p className="flex flex-wrap items-baseline gap-2">
-            <span className="text-5xl font-semibold tracking-[-0.055em] md:text-6xl">£2,000–£3,000</span>
+            <span className="text-5xl font-semibold tracking-[-0.055em] md:text-6xl">£2,500</span>
             <span className="text-muted-foreground">/ month</span>
           </p>
-          <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-            Pricing depends on sourcing difficulty, outreach channels and campaign volume.
+          <p className="mt-3 text-base font-medium text-copper-deep">
+            + £750 one-off onboarding
           </p>
-          <p className="mt-5 text-sm leading-relaxed">
-            Initial 3-month term. Rolling monthly after that.
+          <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
+            We build and continuously develop your target market, identify the relevant
+            decision-makers, run and optimise the outbound infrastructure and campaigns, and manage
+            responses through to qualified commercial opportunities.
           </p>
-          <p className="mt-2 text-sm font-medium text-copper-deep">
-            No setup fees. No per-lead charges.
+          <p className="mt-4 text-sm leading-relaxed">
+            Campaign volume is determined by the available qualified market, typically{" "}
+            <span className="font-medium">3,000–10,000 new prospects per month.</span>
           </p>
           <ul className="my-8 space-y-4 border-t border-border pt-7">
             {inclusions.map((item) => (
@@ -153,7 +156,7 @@ export function Pricing() {
                 <dd className="tabular-nums">{Number(customers.toFixed(1))}</dd>
               </div>
               <div className="flex justify-between gap-4">
-                <dt className="text-muted-foreground">Three-month fee</dt>
+                <dt className="text-muted-foreground">Three months + onboarding</dt>
                 <dd className="tabular-nums">{money(fee)}</dd>
               </div>
             </dl>
@@ -173,15 +176,15 @@ export function Pricing() {
             </div>
             <p className="mt-3 text-xs text-muted-foreground">
               {values.value > 0
-                ? `${Math.ceil(fee / values.value)} new customers to cover the three-month fee in lifetime revenue.`
+                ? `${Math.ceil(fee / values.value)} new customers to cover three months plus onboarding in lifetime revenue.`
                 : "Enter a customer value to calculate fee coverage."}
             </p>
           </div>
           <p className="mt-5 text-xs leading-relaxed text-muted-foreground">
-            Illustrative inputs, not a forecast or guarantee. Assumes a £2,250 monthly fee and
-            customers are acquired within three months; lifetime revenue may arrive later. ROI =
-            (lifetime revenue − our fee) ÷ our fee. Our fee is the only cost included; this is not
-            a profit calculation. An opportunity is not a guaranteed sale.
+            Illustrative inputs, not a forecast or guarantee. Assumes a £2,500 monthly fee plus
+            £750 one-off onboarding and customers are acquired within three months; lifetime revenue
+            may arrive later. ROI = (lifetime revenue − our fee) ÷ our fee. Our fee is the only cost
+            included; this is not a profit calculation. An opportunity is not a guaranteed sale.
           </p>
         </div>
       </div>
