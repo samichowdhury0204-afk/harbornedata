@@ -48,7 +48,7 @@ export function Hero() {
             <div className="relative text-[2.45rem] leading-none tracking-[-0.055em] sm:text-[3.5rem]">
               <AnimatedCounter
                 from={5}
-                to={20}
+                to={40}
                 prefix="£"
                 suffix="k"
                 delay={550}
