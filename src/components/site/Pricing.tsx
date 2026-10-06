@@ -196,10 +196,6 @@ export function Pricing() {
             <h3 className="mt-5 text-3xl font-semibold tracking-[-0.035em] md:text-4xl">
               Specialist managed outbound
             </h3>
-            <p className="mt-5 flex flex-wrap items-baseline gap-2">
-              <span className="text-5xl font-semibold tracking-[-0.055em] md:text-6xl">£8,000</span>
-              <span className="text-muted-foreground">/ month</span>
-            </p>
             <p className="mt-6 text-xl font-medium leading-snug">
               Find the businesses with a specific reason to buy your technology.
             </p>
