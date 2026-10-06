@@ -44,7 +44,7 @@ export function Pricing() {
     <Section id="pricing" className="py-20 md:py-24">
       <SectionLabel>Pricing</SectionLabel>
       <h2 className="mt-6 text-3xl font-semibold tracking-[-0.035em] md:text-5xl">
-        Managed outbound. Matched to your market.
+        One offer. Fully managed outbound
       </h2>
       <div className="mt-10 grid overflow-hidden rounded-xl border border-border lg:grid-cols-[0.9fr_1.1fr]">
         <div className="bg-card p-6 md:p-9">
@@ -189,68 +189,6 @@ export function Pricing() {
           </p>
         </div>
       </div>
-      <article id="specialist-outbound" className="mt-8 scroll-mt-24 overflow-hidden rounded-xl border border-copper/40 bg-card">
-        <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="p-6 md:p-9">
-            <SectionLabel>Specialist service</SectionLabel>
-            <h3 className="mt-5 text-3xl font-semibold tracking-[-0.035em] md:text-4xl">
-              Specialist managed outbound
-            </h3>
-            <p className="mt-6 text-xl font-medium leading-snug">
-              Find the businesses with a specific reason to buy your technology.
-            </p>
-            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-              For founder-led firms selling proven, high-value technical solutions: specialist
-              heating and heat recovery, water treatment, industrial automation, sensors and
-              other niche engineering technologies.
-            </p>
-            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-              We build a bespoke prospecting pipeline around your applications, using evidence
-              from each business to identify a plausible need and develop a relevant approach.
-              Managed email outreach works alongside LinkedIn connections and founder content
-              to open conversations and build familiarity with your solution.
-            </p>
-            <div className="mt-7">
-              <CtaLink trackingPlacement="specialist_pricing">Discuss your specialist campaign</CtaLink>
-            </div>
-          </div>
-          <div className="border-t border-copper/30 p-6 md:p-9 lg:border-t-0 lg:border-l">
-            <h4 className="text-lg font-semibold">Research, outreach and visibility. Fully managed.</h4>
-            <ul className="mt-6 space-y-5">
-              {[
-                ["Bespoke market discovery", "Map buyer applications and build your addressable market beyond standard industry filters."],
-                ["Company research & deeper enrichment", "Find evidence of application fit and relevant buying triggers, then identify and verify decision-makers."],
-                ["A tailored first offer", "Shape a useful assessment, technical discussion or other first step your team can deliver."],
-                ["Evidence-led email campaigns", "Develop company-specific messaging, manage sending infrastructure, run follow-ups and refine campaigns from real replies."],
-                ["Founder-led LinkedIn", "Manage relevant connection requests and plan, write and publish founder content with your approval, at an agreed cadence."],
-                ["Qualified opportunity handover", "Manage replies and pass interested buyers to your team with the research and conversation context attached."],
-                ["Reporting & continuous improvement", "Review applications, messaging and opportunity quality, using your sales feedback to guide the next campaign."],
-              ].map(([title, description]) => (
-                <li key={title} className="flex gap-3 text-sm leading-relaxed">
-                  <Check size={17} className="mt-0.5 shrink-0 text-copper-deep" aria-hidden />
-                  <div>
-                    <p className="font-medium">{title}</p>
-                    <p className="mt-1 text-muted-foreground">{description}</p>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-        <div className="border-t border-copper/30 bg-background/60 p-6 md:px-9">
-          <p className="text-sm leading-relaxed">
-            <span className="font-medium">A practical example:</span> a holiday park with its own
-            lake and a heated pool could be a prospect for water-source heating. We connect
-            verified site facts to a potential application, then open a conversation to establish
-            suitability and interest.
-          </p>
-          <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
-            Best suited to commercially proven solutions with strong project economics and a team
-            ready to develop new opportunities. Research depth, monthly outreach volume and
-            LinkedIn activity are agreed around your qualified market before launch.
-          </p>
-        </div>
-      </article>
     </Section>
   );
 }
